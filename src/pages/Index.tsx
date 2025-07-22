@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ScrollAnimation } from "@/components/scroll-animation";
-import { Zap, Cog, Rocket, ArrowRight, CheckCircle, Users, TrendingUp, Clock, Target, Mail, Star, Sparkles, BarChart3, Shield } from "lucide-react";
+import { Zap, Cog, Rocket, ArrowRight, CheckCircle, Users, TrendingUp, Clock, Target, Mail, Star, Sparkles, BarChart3, Shield, Brain, Lightbulb } from "lucide-react";
 
 const Index = () => {
   return (
@@ -273,48 +273,128 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="px-6 py-20 lg:py-32">
-        <div className="max-w-5xl mx-auto">
-          <ScrollAnimation animation="fade-in-up">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">About Flow Pilot</h2>
-            </div>
-          </ScrollAnimation>
+      <ScrollAnimation>
+        <section className="py-20 lg:py-32 relative overflow-hidden">
+          {/* Background decorations */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse-glow"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float"></div>
+          </div>
           
-          <ScrollAnimation animation="fade-in-up" delay={200}>
-            <div className="text-center prose prose-lg mx-auto text-muted-foreground max-w-none">
-              <p className="text-2xl md:text-3xl mb-8 leading-relaxed">
-                Hey! I'm <strong className="text-foreground bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Gabriel Maturan</strong>, founder of Flow Pilot.
-              </p>
-              <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-                I help founders, teams, and digital businesses build automation systems that work quietly in the background — saving time, money, and stress.
-              </p>
-              <p className="text-xl md:text-2xl mb-12 leading-relaxed">
-                If you're stuck doing manual tasks or jumping between tools all day, let's fix that.
-              </p>
+          <div className="px-6 relative">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <ScrollAnimation animation="fade-in-up">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-hero-gradient bg-clip-text text-transparent">
+                    Meet Gabriel Maturan
+                  </h2>
+                </ScrollAnimation>
+                <ScrollAnimation animation="fade-in-up" delay={200}>
+                  <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+                    The automation architect behind Flow Pilot
+                  </p>
+                </ScrollAnimation>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
+                {/* Profile Card */}
+                <ScrollAnimation animation="slide-in-left">
+                  <div className="relative">
+                    <div className="glass rounded-3xl p-8 shadow-elegant hover:shadow-glow transition-all duration-500 transform hover:-translate-y-2 group">
+                      <div className="flex items-center mb-8">
+                        <div className="w-20 h-20 bg-hero-gradient rounded-2xl flex items-center justify-center text-3xl text-white mr-6 animate-float group-hover:scale-110 transition-transform duration-300">
+                          GM
+                        </div>
+                        <div>
+                          <h3 className="text-2xl md:text-3xl font-bold mb-1">Gabriel Maturan</h3>
+                          <p className="text-primary font-semibold text-lg">Automation Specialist</p>
+                        </div>
+                      </div>
+                      
+                      <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+                        I help ambitious founders and growing teams escape the chaos of manual work through intelligent automation systems.
+                      </p>
+                      
+                      <div className="space-y-6">
+                        <div className="flex items-center text-muted-foreground group-hover:text-foreground transition-colors">
+                          <Zap className="w-6 h-6 mr-4 text-primary" />
+                          <span className="text-lg">5+ years in business automation</span>
+                        </div>
+                        <div className="flex items-center text-muted-foreground group-hover:text-foreground transition-colors">
+                          <Target className="w-6 h-6 mr-4 text-primary" />
+                          <span className="text-lg">100+ successful implementations</span>
+                        </div>
+                        <div className="flex items-center text-muted-foreground group-hover:text-foreground transition-colors">
+                          <Rocket className="w-6 h-6 mr-4 text-primary" />
+                          <span className="text-lg">Average 15+ hours saved per week</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollAnimation>
+
+                {/* Philosophy & Values */}
+                <ScrollAnimation animation="slide-in-right">
+                  <div className="space-y-8">
+                    <div className="glass rounded-2xl p-8 hover:shadow-glow transition-all duration-500 group">
+                      <div className="flex items-center mb-6">
+                        <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mr-6 group-hover:bg-primary/20 transition-colors">
+                          <Brain className="w-7 h-7 text-primary" />
+                        </div>
+                        <h3 className="text-2xl font-semibold">My Philosophy</h3>
+                      </div>
+                      <p className="text-lg text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                        "Complexity is the enemy of execution. I build systems that are powerful yet simple, invisible yet invaluable."
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-6">
+                      <div className="glass rounded-xl p-6 text-center hover:scale-105 transition-all duration-300 group">
+                        <Users className="w-10 h-10 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                        <h4 className="font-semibold mb-2 text-lg">Client-First</h4>
+                        <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Your success is my priority</p>
+                      </div>
+                      <div className="glass rounded-xl p-6 text-center hover:scale-105 transition-all duration-300 group">
+                        <Cog className="w-10 h-10 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                        <h4 className="font-semibold mb-2 text-lg">Precision</h4>
+                        <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Every detail matters</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-300 group">
+                      <h3 className="text-2xl font-semibold mb-4 flex items-center">
+                        <Lightbulb className="w-7 h-7 mr-3 text-primary group-hover:scale-110 transition-transform" />
+                        My Mission
+                      </h3>
+                      <p className="text-lg text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                        To transform how small businesses operate by making enterprise-level automation accessible, affordable, and actually useful.
+                      </p>
+                    </div>
+                  </div>
+                </ScrollAnimation>
+              </div>
+
+              {/* Tools & Expertise */}
+              <ScrollAnimation animation="fade-in-up" delay={600}>
+                <div className="mt-20 text-center">
+                  <h3 className="text-2xl md:text-3xl font-semibold mb-12">Tools I Master</h3>
+                  <div className="flex flex-wrap justify-center gap-6">
+                    {['Zapier', 'Make', 'n8n', 'Airtable', 'Notion', 'Slack', 'Google Workspace'].map((tool, index) => (
+                      <div 
+                        key={tool} 
+                        className="glass rounded-full px-8 py-4 hover:bg-primary/10 transition-all duration-300 hover:scale-110 hover:shadow-glow group cursor-default"
+                        style={{ animationDelay: `${index * 0.1}s` }}
+                      >
+                        <span className="font-semibold text-lg group-hover:text-primary transition-colors">{tool}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </ScrollAnimation>
             </div>
-          </ScrollAnimation>
-          
-          <ScrollAnimation animation="fade-in-up" delay={400}>
-            <div className="grid md:grid-cols-3 gap-8 mt-16">
-              {[
-                { title: "My Mission", desc: "To help small businesses run like big ones — without needing a full tech team." },
-                { title: "My Values", desc: "Clarity over complexity. Automation should save time — not create confusion." },
-                { title: "My Promise", desc: "Good systems are invisible — they just work." }
-              ].map((item, i) => (
-                <Card key={i} className="bg-card-gradient border-0 shadow-card hover:shadow-elegant transition-smooth text-center group hover:scale-105">
-                  <CardHeader>
-                    <CardTitle className="text-xl group-hover:text-primary transition-smooth">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{item.desc}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </ScrollAnimation>
-        </div>
-      </section>
+          </div>
+        </section>
+      </ScrollAnimation>
 
       {/* Final CTA */}
       <section className="px-6 py-20 lg:py-32 bg-hero-gradient text-primary-foreground relative overflow-hidden">

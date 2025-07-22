@@ -103,7 +103,8 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground transition-smooth;
+    @apply bg-background text-foreground;
+    transition: var(--transition-smooth);
   }
 
   /* Scroll animations setup */
