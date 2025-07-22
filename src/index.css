@@ -94,6 +94,7 @@ All colors MUST be HSL.
     --shadow-elegant: 0 10px 40px -10px hsl(260 84% 25% / 0.4);
     --shadow-glow: 0 0 30px hsl(260 100% 70% / 0.4);
     --shadow-card: 0 4px 20px -2px hsl(220 20% 10% / 0.6);
+  }
 }
 
 @layer base {
