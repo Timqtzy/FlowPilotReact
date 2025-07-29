@@ -9,6 +9,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ScrollAnimation } from "@/components/scroll-animation";
+import { Navigation, MobileNavigation } from "@/components/navigation";
 import {
   Zap,
   Cog,
@@ -42,12 +43,16 @@ const Index = () => {
               Flow Pilot
             </span>
           </div>
-          <ThemeToggle />
+          <div className="flex items-center gap-4">
+            <Navigation />
+            <MobileNavigation />
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative px-6 pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+      <section id="home" className="relative px-6 pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 bg-hero-gradient opacity-5"></div>
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
@@ -113,7 +118,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="px-6 py-20 lg:py-32 bg-secondary/30">
+      <section id="services" className="px-6 py-20 lg:py-32 bg-secondary/30">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation animation="fade-in-up">
             <div className="text-center mb-20">
@@ -192,7 +197,7 @@ const Index = () => {
       </section>
 
       {/* Service Packages */}
-      <section className="px-6 py-20 lg:py-32">
+      <section id="pricing" className="px-6 py-20 lg:py-32">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 sm:mb-20 lg:mb-24">
@@ -259,9 +264,19 @@ const Index = () => {
                   ))}
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                  Get Started
-                </button>
+                <div className="space-y-3">
+                  <a
+                    href="https://form.jotform.com/252033789346059"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-center"
+                  >
+                    Get Free Trial 7 Days
+                  </a>
+                  <button className="w-full border-2 border-purple-600 dark:border-purple-500 text-purple-600 dark:text-purple-400 hover:bg-purple-600 dark:hover:bg-purple-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
+                    Get Started
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -305,9 +320,19 @@ const Index = () => {
                   ))}
                 </div>
 
-                <button className="w-full border-2 border-indigo-600 dark:border-indigo-500 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
-                  Learn More
-                </button>
+                <div className="space-y-3">
+                  <a
+                    href="https://form.jotform.com/252033789346059"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-center"
+                  >
+                    Get Free Trial 7 Days
+                  </a>
+                  <button className="w-full border-2 border-indigo-600 dark:border-indigo-500 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
+                    Learn More
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -359,9 +384,19 @@ const Index = () => {
                   ))}
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 hover:from-violet-700 hover:via-purple-700 hover:to-indigo-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-xl hover:shadow-2xl">
-                  Get Quote
-                </button>
+                <div className="space-y-3">
+                  <a
+                    href="https://form.jotform.com/252033789346059"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 hover:from-violet-700 hover:via-purple-700 hover:to-indigo-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-xl hover:shadow-2xl text-center"
+                  >
+                    Get Free Trial 7 Days
+                  </a>
+                  <button className="w-full border-2 border-violet-600 dark:border-violet-500 text-violet-600 dark:text-violet-400 hover:bg-violet-600 dark:hover:bg-violet-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
+                    Get Quote
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -409,9 +444,19 @@ const Index = () => {
                   </p>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-emerald-600 to-purple-600 hover:from-emerald-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                  Get Quote
-                </button>
+                <div className="space-y-3">
+                  <a
+                    href="https://form.jotform.com/252033789346059"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-gradient-to-r from-emerald-600 to-purple-600 hover:from-emerald-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-center"
+                  >
+                    Get Free Trial 7 Days
+                  </a>
+                  <button className="w-full border-2 border-emerald-600 dark:border-emerald-500 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-600 dark:hover:bg-emerald-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
+                    Get Quote
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -421,16 +466,27 @@ const Index = () => {
             <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 mb-8">
               Not sure what you need?
             </p>
-            <button className="group bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 hover:from-purple-700 hover:via-violet-700 hover:to-indigo-700 text-white font-bold text-lg px-10 py-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl flex items-center gap-3 mx-auto">
-              Book a free consult call
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://form.jotform.com/252033789346059"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 hover:from-purple-700 hover:via-violet-700 hover:to-indigo-700 text-white font-bold text-lg px-10 py-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl flex items-center gap-3 mx-auto"
+              >
+                Get Free Trial 7 Days
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <button className="group border-2 border-purple-600 dark:border-purple-500 text-purple-600 dark:text-purple-400 hover:bg-purple-600 dark:hover:bg-purple-500 hover:text-white font-bold text-lg px-10 py-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl flex items-center gap-3 mx-auto">
+                Book a free consult call
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Use Cases */}
-      <section className="px-6 py-20 lg:py-32 bg-secondary/30">
+      <section id="results" className="px-6 py-20 lg:py-32 bg-secondary/30">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation animation="fade-in-up">
             <div className="text-center mb-20">
@@ -512,7 +568,7 @@ const Index = () => {
 
       {/* About Section */}
       <ScrollAnimation>
-        <section className="py-20 lg:py-32 relative overflow-hidden">
+        <section id="about" className="py-20 lg:py-32 relative overflow-hidden">
           {/* Background decorations */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse-glow"></div>
@@ -834,7 +890,7 @@ const Index = () => {
       </ScrollAnimation>
 
       {/* Final CTA */}
-      <section className="px-6 py-20 lg:py-32 bg-hero-gradient text-primary-foreground relative overflow-hidden">
+      <section id="contact" className="px-6 py-20 lg:py-32 bg-hero-gradient text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-float"></div>
           <div
@@ -878,15 +934,13 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="px-6 py-12 bg-secondary/30 text-center border-t border-border/50">
-        <ScrollAnimation animation="fade-in-up">
-          <p className="text-muted-foreground text-lg">
+          <p className="text-foreground text-lg">
             © 2024 Flow Pilot. Automation services for small teams and solo
             founders.
           </p>
-        </ScrollAnimation>
       </footer>
     </div>
   );
 };
 
-export default Index;
+export default Index; 
