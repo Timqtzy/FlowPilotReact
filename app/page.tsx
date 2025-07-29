@@ -52,7 +52,10 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative px-6 pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+      <section
+        id="home"
+        className="relative px-6 pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden"
+      >
         <div className="absolute inset-0 bg-hero-gradient opacity-5"></div>
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
@@ -890,7 +893,10 @@ const Index = () => {
       </ScrollAnimation>
 
       {/* Final CTA */}
-      <section id="contact" className="px-6 py-20 lg:py-32 bg-hero-gradient text-primary-foreground relative overflow-hidden">
+      <section
+        id="contact"
+        className="px-6 py-20 lg:py-32 bg-hero-gradient text-primary-foreground relative overflow-hidden"
+      >
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-float"></div>
           <div
@@ -934,13 +940,13 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="px-6 py-12 bg-secondary/30 text-center border-t border-border/50">
-          <p className="text-foreground text-lg">
-            © 2024 Flow Pilot. Automation services for small teams and solo
-            founders.
-          </p>
+        <p className="text-foreground text-lg">
+          © 2024 Flow Pilot. Automation services for small teams and solo
+          founders.
+        </p>
       </footer>
     </div>
   );
 };
 
-export default Index; 
+export default Index;
