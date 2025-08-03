@@ -27,6 +27,7 @@ import {
   Shield,
   Brain,
   Lightbulb,
+  User
 } from "lucide-react";
 
 const Index = () => {
@@ -218,9 +219,17 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Main Plans Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
-            {/* Solo Plan */}
+          {/* Flow Plan Grid */}
+          <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+            <h2 className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent">
+              Flow Plan
+            </h2>
+            <p className="text-md sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
+              One-Time Fee-Workflow Creation Only
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-24">
+            {/* Starter Plan */}
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-violet-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
               <div className="relative bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-800 rounded-2xl p-8 h-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
@@ -235,10 +244,10 @@ const Index = () => {
                     <Zap className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                    Solo Plan
+                    Starter
                   </h3>
                   <div className="text-4xl lg:text-5xl font-bold text-purple-600 dark:text-purple-400 mb-2">
-                    $399
+                    $199
                     <span className="text-lg text-slate-500 dark:text-slate-400">
                       /month
                     </span>
@@ -251,10 +260,11 @@ const Index = () => {
                 <div className="space-y-4 mb-8">
                   {[
                     "Up to 5 custom workflows",
+                    "Simple logic and triggers",
                     "Email support",
-                    "Hosted and maintained backend",
-                    "Monthly performance check",
-                    "Includes 2,000 AI credits/month",
+                    "Workflow documentation & handoff",
+                    "Delivery: 5-7 business days",
+                    "For small teams",
                   ].map((feature, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <div className="w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -292,10 +302,10 @@ const Index = () => {
                     <Shield className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                    Growth Plan
+                    Growth
                   </h3>
                   <div className="text-4xl lg:text-5xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">
-                    $699
+                    $599
                     <span className="text-lg text-slate-500 dark:text-slate-400">
                       /month
                     </span>
@@ -307,10 +317,13 @@ const Index = () => {
 
                 <div className="space-y-4 mb-8">
                   {[
-                    "Up to 15 workflows",
+                    "Up to 15 advanced workflows",
+                    "API calls and conditional routing",
                     "Slack + email support",
-                    "Monthly optimization + change requests",
-                    "Includes 5,000 AI credits/month",
+                    "2 free change requests included",
+                    "Workflow documentation & handoff",
+                    "Delivery: 3-5 business days",
+                    "Ideal for scaling",
                   ].map((feature, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <div className="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -354,10 +367,10 @@ const Index = () => {
                     <Shield className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                    Pro Plan
+                    Pro
                   </h3>
                   <div className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text mb-2">
-                    $1500+
+                    $1000
                     <span className="text-lg text-slate-500 dark:text-slate-400">
                       /month
                     </span>
@@ -370,11 +383,211 @@ const Index = () => {
 
                 <div className="space-y-4 mb-8">
                   {[
-                    "20+ workflows",
-                    "API integrations, dynamic routing, external data calls",
-                    "Dedicated support + performance tuning",
-                    "Secure private endpoints",
-                    "Includes 10,000 AI credits/month",
+                    "Up to 25 complex workflows",
+                    "Advanced logic: dynamic paths, external data sources",
+                    "API integrations, multi-step chains",
+                    "Priority support (Slack + calls)",
+                    "Unlimited revision cycle during project",
+                    "Delivery: 1–3 business days",
+                    "Advanced setups",
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-r from-violet-100 to-purple-100 dark:from-violet-900/50 dark:to-purple-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="w-4 h-4 text-violet-600 dark:text-violet-400" />
+                      </div>
+                      <span className="text-slate-700 dark:text-slate-300">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-3">
+                  <a
+                    href="https://form.jotform.com/252033789346059"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 hover:from-violet-700 hover:via-purple-700 hover:to-indigo-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-xl hover:shadow-2xl text-center"
+                  >
+                    Get Free Trial 7 Days
+                  </a>
+                  <button className="w-full border-2 border-violet-600 dark:border-violet-500 text-violet-600 dark:text-violet-400 hover:bg-violet-600 dark:hover:bg-violet-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
+                    Get Quote
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Pilot Plan Grid */}
+          <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+            <h2 className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent">
+              Pilot Plan
+            </h2>
+            <p className="text-lg sm:text-xl lg:text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
+              Full Monthly Subscription-All Inclusive
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
+            {/* Starter Plan */}
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-violet-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+              <div className="relative bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-800 rounded-2xl p-8 h-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="absolute top-4 right-4">
+                  <div className="bg-gradient-to-r from-purple-600 to-violet-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                    MOST POPULAR
+                  </div>
+                </div>
+
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-violet-500 rounded-2xl flex items-center justify-center">
+                    <Zap className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                    Starter
+                  </h3>
+                  <div className="text-4xl lg:text-5xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+                    $499
+                    <span className="text-lg text-slate-500 dark:text-slate-400">
+                      /month
+                    </span>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    For founders and freelancers with lean, high-impact needs.
+                  </p>
+                </div>
+
+                <div className="space-y-4 mb-8">
+                  {[
+                    "3 fully managed workflows",
+                    "We subscribe to and manage automation tools (Zapier/Make, etc.)",
+                    "2,000 AI credits/month",
+                    "Hosted backend + secure endpoints",
+                    "Email Support",
+                    "Monthly performance report"
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                      </div>
+                      <span className="text-slate-700 dark:text-slate-300">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-3">
+                  <a
+                    href="https://form.jotform.com/252033789346059"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-center"
+                  >
+                    Get Free Trial 7 Days
+                  </a>
+                  <button className="w-full border-2 border-purple-600 dark:border-purple-500 text-purple-600 dark:text-purple-400 hover:bg-purple-600 dark:hover:bg-purple-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Growth Plan */}
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-1000"></div>
+              <div className="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center">
+                    <Shield className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                    Growth
+                  </h3>
+                  <div className="text-4xl lg:text-5xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">
+                    $799
+                    <span className="text-lg text-slate-500 dark:text-slate-400">
+                      /month
+                    </span>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    For startups, ops teams, or digital agencies.
+                  </p>
+                </div>
+
+                <div className="space-y-4 mb-8">
+                  {[
+                    "8 workflows, scalable across departments",
+                    "Monthly optimization & change requests",
+                    "API integrations & AI logic configuration",
+                    "5,000 AI credits/month",
+                    "Slack + email support",
+                    "Advanced reporting dashboard"
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                      </div>
+                      <span className="text-slate-700 dark:text-slate-300">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-3">
+                  <a
+                    href="https://form.jotform.com/252033789346059"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-center"
+                  >
+                    Get Free Trial 7 Days
+                  </a>
+                  <button className="w-full border-2 border-indigo-600 dark:border-indigo-500 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
+                    Learn More
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Pro Plan */}
+            <div className="relative group md:col-span-2 lg:col-span-1">
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+              <div className="relative bg-white dark:bg-slate-900 border-2 border-purple-300 dark:border-purple-700 rounded-2xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="absolute top-4 right-4">
+                  <div className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold animate-pulse">
+                    ENTERPRISE
+                  </div>
+                </div>
+
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center">
+                    <Shield className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2">
+                    Pro
+                  </h3>
+                  <div className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text mb-2">
+                    $1599
+                    <span className="text-lg text-slate-500 dark:text-slate-400">
+                      /month
+                    </span>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    For complex systems with high-volume automations or custom
+                    AI logic.
+                  </p>
+                </div>
+
+                <div className="space-y-4 mb-8">
+                  {[
+                    "20+ enterprise-grade workflows",
+                    "Complex logic, external data calls, dynamic routing",
+                    "10,000 AI credits/month",
+                    "Performance tuning, secure hosting, & priority uptime",
+                    "Dedicated support team",
+                    "Priority onboarding & live check-ins"
                   ].map((feature, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <div className="w-6 h-6 rounded-full bg-gradient-to-r from-violet-100 to-purple-100 dark:from-violet-900/50 dark:to-purple-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -600,7 +813,7 @@ const Index = () => {
                   <div className="relative">
                     <div className="glass rounded-3xl p-8 shadow-elegant hover:shadow-glow transition-all duration-500 transform hover:-translate-y-2 group">
                       <div className="flex items-center mb-8">
-                        <div className="w-20 h-20 bg-hero-gradient rounded-2xl flex items-center justify-center text-3xl text-white mr-6 animate-float group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-20 h-20 bg-hero-gradient rounded-2xl flex items-center justify-center text-3xl text-white mr-6">
                           FP
                         </div>
                         <div>
@@ -698,13 +911,17 @@ const Index = () => {
               {/* Team Structure */}
               <ScrollAnimation animation="fade-in-up" delay={400}>
                 <div className="mt-20">
-                  <h3 className="text-2xl md:text-3xl font-semibold mb-12 text-center">
+                  <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-center">
                     Our Team
                   </h3>
+                  <p className="text-lg text-center mb-12 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                    We’re a focused, hands-on automation team that brings together strategy,
+                    execution, communication, and growth. Here's who makes the magic happen
+                  </p>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     {/* Gabriel */}
                     <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
-                      <div className="w-16 h-16 bg-hero-gradient rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto animate-float group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-16 h-16 bg-hero-gradient rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
                         GM
                       </div>
                       <h4 className="text-xl font-semibold text-center mb-2">
@@ -714,42 +931,149 @@ const Index = () => {
                         Founder & CEO
                       </p>
                       <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
-                        Leading strategy and overseeing all automation
-                        implementations
-                      </p>
-                    </div>
-
-                    {/* Developers */}
-                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
-                      <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto animate-float group-hover:scale-110 transition-transform duration-300">
-                        <Cog className="w-8 h-8" />
-                      </div>
-                      <h4 className="text-xl font-semibold text-center mb-2">
-                        Automation Developers
-                      </h4>
-                      <p className="text-primary text-center font-medium mb-3">
-                        3 Specialists
+                        Leads strategy and oversees all automation implementations
                       </p>
                       <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
-                        Deep experience in Zapier, Make, n8n, and custom
-                        integrations
+                        Vision, leadership, and architecture
                       </p>
                     </div>
 
                     {/* Project Manager */}
                     <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group md:col-span-2 lg:col-span-1">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto animate-float group-hover:scale-110 transition-transform duration-300">
-                        <Users className="w-8 h-8" />
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                        R
                       </div>
                       <h4 className="text-xl font-semibold text-center mb-2">
-                        Project Manager
+                        Russel
                       </h4>
                       <p className="text-primary text-center font-medium mb-3">
-                        Communication Lead
+                        Project Manager
                       </p>
                       <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
-                        Keeping communication and delivery smooth throughout
-                        your project
+                        Keeps communication and delivery smooth throughout your project
+                      </p>
+                    </div>
+
+                    {/* Sales Lead */}
+                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group md:col-span-2 lg:col-span-1">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                        E
+                      </div>
+                      <h4 className="text-xl font-semibold text-center mb-2">
+                        Erish Joshua
+                      </h4>
+                      <p className="text-primary text-center font-medium mb-3">
+                        Sales Lead
+                      </p>
+                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                        Works directly with clients to scope, quote, and align the right solutions for their needs
+                      </p>
+                    </div>
+
+                    {/* Marketing & Outreach */}
+                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group md:col-span-2 lg:col-span-1">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                        M
+                      </div>
+                      <h4 className="text-xl font-semibold text-center mb-2">
+                        Mark
+                      </h4>
+                      <p className="text-primary text-center font-medium mb-3">
+                        Marketing & Outreach
+                      </p>
+                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                        Responsible for client education, brand strategy, and lead generation
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollAnimation>
+
+              {/* Developers */}
+              <ScrollAnimation animation="fade-in-up" delay={400}>
+                <div className="mt-20">
+                  <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-center">
+                    Automation Developers
+                  </h3>
+                  <p className="text-lg text-center mb-12 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                    6 Specialists Experts in Zapier, Make, n8n, and custom integrations
+                  </p>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    {/* Tim */}
+                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
+                      <div className="w-16 h-16 bg-hero-gradient rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                        <User className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-xl font-semibold text-center mb-2">
+                        Tim
+                      </h4>
+                      <p className="text-primary text-center font-medium mb-3">
+                        Lead Integrations
+                      </p>
+                    </div>
+
+                    {/* Darrel */}
+                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
+                      <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                        <User className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-xl font-semibold text-center mb-2">
+                        Darrel
+                      </h4>
+                      <p className="text-primary text-center font-medium mb-3">
+                        Workflow Architect
+                      </p>
+                    </div>
+
+                    {/* Gelo */}
+                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group md:col-span-2 lg:col-span-1">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                        <User className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-xl font-semibold text-center mb-2">
+                        Gelo
+                      </h4>
+                      <p className="text-primary text-center font-medium mb-3">
+                        Backend Logic & Data Sync
+                      </p>
+                    </div>
+
+                    {/* Ram */}
+                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group md:col-span-2 lg:col-span-1">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                        <User className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-xl font-semibold text-center mb-2">
+                        Ram
+                      </h4>
+                      <p className="text-primary text-center font-medium mb-3">
+                        Multi-platform Automation
+                      </p>
+                    </div>
+
+                    {/* Ton */}
+                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group md:col-span-2 lg:col-span-1">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                        <User className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-xl font-semibold text-center mb-2">
+                        Ton
+                      </h4>
+                      <p className="text-primary text-center font-medium mb-3">
+                        API & Webhook Specialist
+                      </p>
+                    </div>
+
+                    {/* Randell  */}
+                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group md:col-span-2 lg:col-span-1">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                        <User className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-xl font-semibold text-center mb-2">
+                        Randell
+                      </h4>
+                      <p className="text-primary text-center font-medium mb-3">
+                        QA + Performance Optimization
                       </p>
                     </div>
                   </div>
@@ -764,7 +1088,7 @@ const Index = () => {
                   </h3>
                   <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     <div className="glass rounded-2xl p-6 text-center hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 mx-auto animate-float group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 mx-auto">
                         <Brain className="w-8 h-8 text-white" />
                       </div>
                       <h4 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
@@ -776,7 +1100,7 @@ const Index = () => {
                     </div>
 
                     <div className="glass rounded-2xl p-6 text-center hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
-                      <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center mb-4 mx-auto animate-float group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center mb-4 mx-auto">
                         <Zap className="w-8 h-8 text-white" />
                       </div>
                       <h4 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
@@ -788,7 +1112,7 @@ const Index = () => {
                     </div>
 
                     <div className="glass rounded-2xl p-6 text-center hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 mx-auto animate-float group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 mx-auto">
                         <Target className="w-8 h-8 text-white" />
                       </div>
                       <h4 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
@@ -802,19 +1126,65 @@ const Index = () => {
                 </div>
               </ScrollAnimation>
 
+              {/* Reviews */}
+              <ScrollAnimation animation="fade-in-up" delay={500}>
+                <div className="mt-20">
+                  <h3 className="text-2xl md:text-3xl font-semibold mb-12 text-center">
+                    What People Are Saying
+                  </h3>
+                  <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div className="glass rounded-2xl p-6 text-center hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                        <User className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
+                        “Clear, simple, and effective”
+                      </h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                        “I finally understand how everything fits together. No jargon, no fluff — just clear answers.”
+                      </p>
+                    </div>
+
+                    <div className="glass rounded-2xl p-6 text-center hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
+                      <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                        <User className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
+                        “A massive time-saver”
+                      </h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                        “What used to take me hours now runs on autopilot. I barely have to think about it.”
+                      </p>
+                    </div>
+
+                    <div className="glass rounded-2xl p-6 text-center hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                        <User className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
+                        “It just works — seamlessly”
+                      </h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                        “The automation is invisible and flawless. I don’t even notice it running — and that’s the best part.”
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </ScrollAnimation>
+
               {/* What We Work With */}
               <ScrollAnimation animation="fade-in-up" delay={600}>
                 <div className="mt-20">
                   <h3 className="text-2xl md:text-3xl font-semibold mb-12 text-center">
-                    What We Work With
+                    Workflows Created
                   </h3>
 
                   <div className="space-y-8 max-w-4xl mx-auto">
-                    {/* Automation Platforms */}
+                    {/* Workflow placeholder */}
                     <div className="glass rounded-2xl p-8 hover:shadow-glow transition-all duration-500 group">
                       <h4 className="text-xl font-semibold mb-4 flex items-center">
                         <Cog className="w-6 h-6 mr-3 text-primary group-hover:scale-110 transition-transform" />
-                        Automation Platforms
+                        Workflow Title
                       </h4>
                       <div className="flex flex-wrap gap-4">
                         {["Zapier", "Make (Integromat)", "n8n"].map(
@@ -833,44 +1203,26 @@ const Index = () => {
                       </div>
                     </div>
 
-                    {/* Custom Development */}
+                    {/*  Workflow placeholder */}
                     <div className="glass rounded-2xl p-8 hover:shadow-glow transition-all duration-500 group">
                       <h4 className="text-xl font-semibold mb-4 flex items-center">
-                        <Rocket className="w-6 h-6 mr-3 text-primary group-hover:scale-110 transition-transform" />
-                        Custom Development
-                      </h4>
-                      <p className="text-muted-foreground mb-4 group-hover:text-foreground transition-colors">
-                        Custom Express.js backends hosted on{" "}
-                        <strong className="text-primary">AWS</strong>
-                      </p>
-                    </div>
-
-                    {/* Tools & Integrations */}
-                    <div className="glass rounded-2xl p-8 hover:shadow-glow transition-all duration-500 group">
-                      <h4 className="text-xl font-semibold mb-4 flex items-center">
-                        <Users className="w-6 h-6 mr-3 text-primary group-hover:scale-110 transition-transform" />
-                        Tools & Integrations
+                        <Cog className="w-6 h-6 mr-3 text-primary group-hover:scale-110 transition-transform" />
+                        Workflow Title
                       </h4>
                       <div className="flex flex-wrap gap-4">
-                        {[
-                          "Airtable",
-                          "Notion",
-                          "Google Workspace",
-                          "Slack",
-                          "CRMs",
-                          "APIs",
-                          "And More",
-                        ].map((tool, index) => (
-                          <div
-                            key={tool}
-                            className="bg-accent/10 rounded-full px-6 py-3 hover:bg-accent/20 transition-all duration-300 hover:scale-105 group/item"
-                            style={{ animationDelay: `${index * 0.1}s` }}
-                          >
-                            <span className="font-semibold text-accent group-hover/item:text-accent transition-colors">
-                              {tool}
-                            </span>
-                          </div>
-                        ))}
+                        {["Zapier", "Make (Integromat)", "n8n"].map(
+                          (platform, index) => (
+                            <div
+                              key={platform}
+                              className="bg-primary/10 rounded-full px-6 py-3 hover:bg-primary/20 transition-all duration-300 hover:scale-105 group/item"
+                              style={{ animationDelay: `${index * 0.1}s` }}
+                            >
+                              <span className="font-semibold text-primary group-hover/item:text-primary transition-colors">
+                                {platform}
+                              </span>
+                            </div>
+                          )
+                        )}
                       </div>
                     </div>
                   </div>
