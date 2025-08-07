@@ -254,8 +254,8 @@ const Index = () => {
             <div className="text-center mb-8">
               <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
                 {activePlan === 'flow' 
-                  ? 'Subscription Fee - Workflow Creation Only' 
-                  : 'Full Monthly Subscription - All Inclusive'
+                  ? 'Subscribe to our service, plug in your preferred automation tool, and let us expertly craft powerful workflows tailored to your needs.' 
+                  : 'Our full-service subscription handles everything—from automation setup to end-to-end workflow execution—so you stay focused on what matters.'
                 }
               </p>
             </div>
@@ -268,7 +268,7 @@ const Index = () => {
             {/* Starter Plan */}
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-violet-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-              <div className="relative bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-800 rounded-2xl p-8 h-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="relative bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-800 rounded-2xl p-8 h-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
                 <div className="absolute top-4 right-4">
                   <div className="bg-gradient-to-r from-purple-600 to-violet-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
                     MOST POPULAR
@@ -293,7 +293,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-4 mb-8 flex-grow">
                   {[
                     "Up to 4 custom workflows",
                     "Simple logic and triggers",
@@ -312,7 +312,7 @@ const Index = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-auto">
                   <a
                     href="https://form.jotform.com/252033789346059"
                     target="_blank"
@@ -328,7 +328,7 @@ const Index = () => {
             {/* Growth Plan */}
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-1000"></div>
-              <div className="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
                 <div className="text-center mb-8">
                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center">
                     <Shield className="w-8 h-8 text-white" />
@@ -347,7 +347,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-4 mb-8 flex-grow">
                   {[
                     "Up to 10 advanced workflows",
                     "API calls and conditional routing",
@@ -367,7 +367,7 @@ const Index = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-auto">
                   <a
                     href="https://form.jotform.com/252033789346059"
                     target="_blank"
@@ -383,7 +383,7 @@ const Index = () => {
             {/* Pro Plan */}
             <div className="relative group md:col-span-2 lg:col-span-1">
               <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
-              <div className="relative bg-white dark:bg-slate-900 border-2 border-purple-300 dark:border-purple-700 rounded-2xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="relative bg-white dark:bg-slate-900 border-2 border-purple-300 dark:border-purple-700 rounded-2xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
                 <div className="absolute top-4 right-4">
                   <div className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold animate-pulse">
                     ENTERPRISE
@@ -409,7 +409,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-4 mb-8 flex-grow">
                   {[
                     "Up to 20 complex workflows",
                     "Advanced logic: dynamic paths, external data sources",
@@ -429,7 +429,7 @@ const Index = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-auto">
                   <a
                     href="https://form.jotform.com/252033789346059"
                     target="_blank"
@@ -452,7 +452,7 @@ const Index = () => {
             {/* Starter Plan */}
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-violet-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-              <div className="relative bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-800 rounded-2xl p-8 h-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="relative bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-800 rounded-2xl p-8 h-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
                 <div className="absolute top-4 right-4">
                   <div className="bg-gradient-to-r from-purple-600 to-violet-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
                     MOST POPULAR
@@ -477,7 +477,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-4 mb-8 flex-grow">
                   {[
                     "3 fully managed workflows",
                     "We subscribe to and manage automation tools (Zapier/Make, etc.)",
@@ -497,7 +497,7 @@ const Index = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-auto">
                   <a
                     href="https://form.jotform.com/252033789346059"
                     target="_blank"
@@ -514,7 +514,7 @@ const Index = () => {
             {/* Growth Plan */}
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-1000"></div>
-              <div className="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
                 <div className="text-center mb-8">
                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center">
                     <Shield className="w-8 h-8 text-white" />
@@ -533,7 +533,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-4 mb-8 flex-grow">
                   {[
                     "8 workflows, scalable across departments",
                     "Monthly optimization & change requests",
@@ -553,7 +553,7 @@ const Index = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-auto">
                   <a
                     href="https://form.jotform.com/252033789346059"
                     target="_blank"
@@ -570,7 +570,7 @@ const Index = () => {
             {/* Pro Plan */}
             <div className="relative group md:col-span-2 lg:col-span-1">
               <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
-              <div className="relative bg-white dark:bg-slate-900 border-2 border-purple-300 dark:border-purple-700 rounded-2xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="relative bg-white dark:bg-slate-900 border-2 border-purple-300 dark:border-purple-700 rounded-2xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
                 <div className="absolute top-4 right-4">
                   <div className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold animate-pulse">
                     ENTERPRISE
@@ -596,7 +596,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-4 mb-8 flex-grow">
                   {[
                     "20+ enterprise-grade workflows",
                     "Complex logic, external data calls, dynamic routing",
@@ -616,7 +616,7 @@ const Index = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-auto">
                   <a
                     href="https://form.jotform.com/252033789346059"
                     target="_blank"
