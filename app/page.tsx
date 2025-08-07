@@ -92,7 +92,7 @@ const Index = () => {
               with fully managed automations — powered by
               <span className="text-primary font-semibold">
                 {" "}
-                Zapier, Make, AI agents, and custom-built systems.
+                Zapier, Make, n8n, AI agents, and custom-built systems.
               </span>
               <span> No tools to manage. Just results.</span>
             </p>
@@ -134,7 +134,7 @@ const Index = () => {
                 time and eliminate bottlenecks — using
                 <span className="text-primary font-semibold">
                   {" "}
-                  Zapier, Make (Integromat), AI agents, and fully hosted backend
+                  Zapier, Make (Integromat), n8n, AI agents, and fully hosted backend
                   flows
                 </span>
               </p>
@@ -156,7 +156,7 @@ const Index = () => {
               {
                 icon: Target,
                 title: "Connect Your Tools",
-                desc: "Link Notion, Airtable, Slack, CRMs, Google Sheets",
+                desc: "Link Notion, Airtable, Discord, CRMs, Google Sheets",
                 delay: 100,
               },
               {
@@ -215,7 +215,7 @@ const Index = () => {
             <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
               All plans include setup, hosting, AI workflow credits, and ongoing
               support. You don't need your own Zapier, Make, or AI tools — we
-              handle it all.
+              handle it all on flow pilot.
             </p>
           </div>
 
@@ -225,7 +225,7 @@ const Index = () => {
               Flow Plan
             </h2>
             <p className="text-md sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              One-Time Fee-Workflow Creation Only
+              Subscription Fee-Workflow Creation Only
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-24">
@@ -259,11 +259,10 @@ const Index = () => {
 
                 <div className="space-y-4 mb-8">
                   {[
-                    "Up to 5 custom workflows",
+                    "Up to 4 custom workflows",
                     "Simple logic and triggers",
                     "Email support",
                     "Workflow documentation & handoff",
-                    "Delivery: 5-7 business days",
                     "For small teams",
                   ].map((feature, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -277,7 +276,7 @@ const Index = () => {
                   ))}
                 </div>
 
-                <div className="space-y-3">
+                <div className="flex justify-center">
                   <a
                     href="https://form.jotform.com/252033789346059"
                     target="_blank"
@@ -286,9 +285,6 @@ const Index = () => {
                   >
                     Get Free Trial 7 Days
                   </a>
-                  <button className="w-full border-2 border-purple-600 dark:border-purple-500 text-purple-600 dark:text-purple-400 hover:bg-purple-600 dark:hover:bg-purple-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
-                    Get Started
-                  </button>
                 </div>
               </div>
             </div>
@@ -317,12 +313,11 @@ const Index = () => {
 
                 <div className="space-y-4 mb-8">
                   {[
-                    "Up to 15 advanced workflows",
+                    "Up to 10 advanced workflows",
                     "API calls and conditional routing",
-                    "Slack + email support",
+                    "Discord + email support",
                     "2 free change requests included",
                     "Workflow documentation & handoff",
-                    "Delivery: 3-5 business days",
                     "Ideal for scaling",
                   ].map((feature, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -336,7 +331,7 @@ const Index = () => {
                   ))}
                 </div>
 
-                <div className="space-y-3">
+                <div className="flex justify-center">
                   <a
                     href="https://form.jotform.com/252033789346059"
                     target="_blank"
@@ -345,9 +340,6 @@ const Index = () => {
                   >
                     Get Free Trial 7 Days
                   </a>
-                  <button className="w-full border-2 border-indigo-600 dark:border-indigo-500 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
-                    Learn More
-                  </button>
                 </div>
               </div>
             </div>
@@ -370,7 +362,7 @@ const Index = () => {
                     Pro
                   </h3>
                   <div className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text mb-2">
-                    $1000
+                    $1299
                     <span className="text-lg text-slate-500 dark:text-slate-400">
                       /month
                     </span>
@@ -383,12 +375,11 @@ const Index = () => {
 
                 <div className="space-y-4 mb-8">
                   {[
-                    "Up to 25 complex workflows",
+                    "Up to 20 complex workflows",
                     "Advanced logic: dynamic paths, external data sources",
                     "API integrations, multi-step chains",
-                    "Priority support (Slack + calls)",
+                    "Priority support (Discord + calls)",
                     "Unlimited revision cycle during project",
-                    "Delivery: 1–3 business days",
                     "Advanced setups",
                   ].map((feature, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -402,7 +393,7 @@ const Index = () => {
                   ))}
                 </div>
 
-                <div className="space-y-3">
+                <div className="flex justify-center">
                   <a
                     href="https://form.jotform.com/252033789346059"
                     target="_blank"
@@ -411,9 +402,7 @@ const Index = () => {
                   >
                     Get Free Trial 7 Days
                   </a>
-                  <button className="w-full border-2 border-violet-600 dark:border-violet-500 text-violet-600 dark:text-violet-400 hover:bg-violet-600 dark:hover:bg-violet-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
-                    Get Quote
-                  </button>
+                 
                 </div>
               </div>
             </div>
@@ -477,7 +466,7 @@ const Index = () => {
                   ))}
                 </div>
 
-                <div className="space-y-3">
+                <div className="flex justify-center">
                   <a
                     href="https://form.jotform.com/252033789346059"
                     target="_blank"
@@ -486,9 +475,7 @@ const Index = () => {
                   >
                     Get Free Trial 7 Days
                   </a>
-                  <button className="w-full border-2 border-purple-600 dark:border-purple-500 text-purple-600 dark:text-purple-400 hover:bg-purple-600 dark:hover:bg-purple-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
-                    Get Started
-                  </button>
+             
                 </div>
               </div>
             </div>
@@ -521,7 +508,7 @@ const Index = () => {
                     "Monthly optimization & change requests",
                     "API integrations & AI logic configuration",
                     "5,000 AI credits/month",
-                    "Slack + email support",
+                    "Discord + email support",
                     "Advanced reporting dashboard"
                   ].map((feature, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -535,7 +522,7 @@ const Index = () => {
                   ))}
                 </div>
 
-                <div className="space-y-3">
+                <div className="flex justify-center">
                   <a
                     href="https://form.jotform.com/252033789346059"
                     target="_blank"
@@ -544,9 +531,7 @@ const Index = () => {
                   >
                     Get Free Trial 7 Days
                   </a>
-                  <button className="w-full border-2 border-indigo-600 dark:border-indigo-500 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-600 dark:hover:bg-indigo-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
-                    Learn More
-                  </button>
+               
                 </div>
               </div>
             </div>
@@ -600,7 +585,7 @@ const Index = () => {
                   ))}
                 </div>
 
-                <div className="space-y-3">
+                <div className="flex justify-center">
                   <a
                     href="https://form.jotform.com/252033789346059"
                     target="_blank"
@@ -609,9 +594,7 @@ const Index = () => {
                   >
                     Get Free Trial 7 Days
                   </a>
-                  <button className="w-full border-2 border-violet-600 dark:border-violet-500 text-violet-600 dark:text-violet-400 hover:bg-violet-600 dark:hover:bg-violet-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
-                    Get Quote
-                  </button>
+                 
                 </div>
               </div>
             </div>
@@ -660,7 +643,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div className="space-y-3">
+                <div className="flex justify-center">
                   <a
                     href="https://form.jotform.com/252033789346059"
                     target="_blank"
@@ -669,35 +652,11 @@ const Index = () => {
                   >
                     Get Free Trial 7 Days
                   </a>
-                  <button className="w-full border-2 border-emerald-600 dark:border-emerald-500 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-600 dark:hover:bg-emerald-500 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105">
-                    Get Quote
-                  </button>
+             
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center">
-            <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 mb-8">
-              Not sure what you need?
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://form.jotform.com/252033789346059"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 hover:from-purple-700 hover:via-violet-700 hover:to-indigo-700 text-white font-bold text-lg px-10 py-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl flex items-center gap-3 mx-auto"
-              >
-                Get Free Trial 7 Days
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <button className="group border-2 border-purple-600 dark:border-purple-500 text-purple-600 dark:text-purple-400 hover:bg-purple-600 dark:hover:bg-purple-500 hover:text-white font-bold text-lg px-10 py-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl flex items-center gap-3 mx-auto">
-                Book a free consult call
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-          </div>
+          </div>         
         </div>
       </section>
 
@@ -735,7 +694,7 @@ const Index = () => {
                   <div className="text-lg">
                     <strong>Solution:</strong> Built workflow using Make + AI
                     routing logic to assign leads by category and alert sales
-                    via Slack
+                    via Discord
                   </div>
                   <div className="flex items-center gap-3 text-primary font-semibold text-lg">
                     <TrendingUp className="w-6 h-6" />
@@ -1172,73 +1131,76 @@ const Index = () => {
                 </div>
               </ScrollAnimation>
 
-              {/* What We Work With */}
-              <ScrollAnimation animation="fade-in-up" delay={600}>
-                <div className="mt-20">
-                  <h3 className="text-2xl md:text-3xl font-semibold mb-12 text-center">
-                    Workflows Created
-                  </h3>
+                {/* 
+                What We Work With - Workflows Created Section
+                This section displays workflow examples and platforms used
+                Currently hidden/disabled
+                
+                <ScrollAnimation animation="fade-in-up" delay={600}>
+                  <div className="mt-20">
+                    <h3 className="text-2xl md:text-3xl font-semibold mb-12 text-center">
+                      Workflows Created
+                    </h3>
 
-                  <div className="space-y-8 max-w-4xl mx-auto">
-                    {/* Workflow placeholder */}
-                    <div className="glass rounded-2xl p-8 hover:shadow-glow transition-all duration-500 group">
-                      <h4 className="text-xl font-semibold mb-4 flex items-center">
-                        <Cog className="w-6 h-6 mr-3 text-primary group-hover:scale-110 transition-transform" />
-                        Workflow Title
-                      </h4>
-                      <div className="flex flex-wrap gap-4">
-                        {["Zapier", "Make (Integromat)", "n8n"].map(
-                          (platform, index) => (
-                            <div
-                              key={platform}
-                              className="bg-primary/10 rounded-full px-6 py-3 hover:bg-primary/20 transition-all duration-300 hover:scale-105 group/item"
-                              style={{ animationDelay: `${index * 0.1}s` }}
-                            >
-                              <span className="font-semibold text-primary group-hover/item:text-primary transition-colors">
-                                {platform}
-                              </span>
-                            </div>
-                          )
-                        )}
+                    <div className="space-y-8 max-w-4xl mx-auto">
+                      <div className="glass rounded-2xl p-8 hover:shadow-glow transition-all duration-500 group">
+                        <h4 className="text-xl font-semibold mb-4 flex items-center">
+                          <Cog className="w-6 h-6 mr-3 text-primary group-hover:scale-110 transition-transform" />
+                          Workflow Title
+                        </h4>
+                        <div className="flex flex-wrap gap-4">
+                          {["Zapier", "Make (Integromat)", "n8n"].map(
+                            (platform, index) => (
+                              <div
+                                key={platform}
+                                className="bg-primary/10 rounded-full px-6 py-3 hover:bg-primary/20 transition-all duration-300 hover:scale-105 group/item"
+                                style={{ animationDelay: `${index * 0.1}s` }}
+                              >
+                                <span className="font-semibold text-primary group-hover/item:text-primary transition-colors">
+                                  {platform}
+                                </span>
+                              </div>
+                            )
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="glass rounded-2xl p-8 hover:shadow-glow transition-all duration-500 group">
+                        <h4 className="text-xl font-semibold mb-4 flex items-center">
+                          <Cog className="w-6 h-6 mr-3 text-primary group-hover:scale-110 transition-transform" />
+                          Workflow Title
+                        </h4>
+                        <div className="flex flex-wrap gap-4">
+                          {["Zapier", "Make (Integromat)", "n8n"].map(
+                            (platform, index) => (
+                              <div
+                                key={platform}
+                                className="bg-primary/10 rounded-full px-6 py-3 hover:bg-primary/20 transition-all duration-300 hover:scale-105 group/item"
+                                style={{ animationDelay: `${index * 0.1}s` }}
+                              >
+                                <span className="font-semibold text-primary group-hover/item:text-primary transition-colors">
+                                  {platform}
+                                </span>
+                              </div>
+                            )
+                          )}
+                        </div>
                       </div>
                     </div>
 
-                    {/*  Workflow placeholder */}
-                    <div className="glass rounded-2xl p-8 hover:shadow-glow transition-all duration-500 group">
-                      <h4 className="text-xl font-semibold mb-4 flex items-center">
-                        <Cog className="w-6 h-6 mr-3 text-primary group-hover:scale-110 transition-transform" />
-                        Workflow Title
-                      </h4>
-                      <div className="flex flex-wrap gap-4">
-                        {["Zapier", "Make (Integromat)", "n8n"].map(
-                          (platform, index) => (
-                            <div
-                              key={platform}
-                              className="bg-primary/10 rounded-full px-6 py-3 hover:bg-primary/20 transition-all duration-300 hover:scale-105 group/item"
-                              style={{ animationDelay: `${index * 0.1}s` }}
-                            >
-                              <span className="font-semibold text-primary group-hover/item:text-primary transition-colors">
-                                {platform}
-                              </span>
-                            </div>
-                          )
-                        )}
+                    <div className="text-center mt-12">
+                      <div className="glass rounded-2xl p-8 max-w-2xl mx-auto hover:shadow-glow transition-all duration-500 group">
+                        <p className="text-lg text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                          <strong className="text-primary">
+                            Whether you need 1 automation or a fully-managed
+                            backend system, we've got it covered.
+                          </strong>
+                        </p>
                       </div>
                     </div>
                   </div>
-
-                  <div className="text-center mt-12">
-                    <div className="glass rounded-2xl p-8 max-w-2xl mx-auto hover:shadow-glow transition-all duration-500 group">
-                      <p className="text-lg text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
-                        <strong className="text-primary">
-                          Whether you need 1 automation or a fully-managed
-                          backend system, we've got it covered.
-                        </strong>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollAnimation>
+                </ScrollAnimation>
+                */}
             </div>
           </div>
         </section>
