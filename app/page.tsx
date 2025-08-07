@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -29,8 +31,10 @@ import {
   Lightbulb,
   User
 } from "lucide-react";
+import { useState } from "react";
 
 const Index = () => {
+  const [activePlan, setActivePlan] = useState<'flow' | 'pilot'>('flow');
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -217,18 +221,50 @@ const Index = () => {
               support. You don't need your own Zapier, Make, or AI tools — we
               handle it all on flow pilot.
             </p>
+
+            {/* Toggle Buttons */}
+            <div className="flex justify-center mt-12 mb-8">
+              <div className="glass rounded-2xl p-2 border border-purple-200 dark:border-purple-800">
+                <div className="flex">
+                  <button
+                    onClick={() => setActivePlan('flow')}
+                    className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+                      activePlan === 'flow'
+                        ? 'bg-gradient-to-r from-purple-600 to-violet-600 text-white shadow-lg'
+                        : 'text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400'
+                    }`}
+                  >
+                    Flow Plan
+                  </button>
+                  <button
+                    onClick={() => setActivePlan('pilot')}
+                    className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+                      activePlan === 'pilot'
+                        ? 'bg-gradient-to-r from-purple-600 to-violet-600 text-white shadow-lg'
+                        : 'text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400'
+                    }`}
+                  >
+                    Pilot Plan
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Plan Description */}
+            <div className="text-center mb-8">
+              <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                {activePlan === 'flow' 
+                  ? 'Subscription Fee - Workflow Creation Only' 
+                  : 'Full Monthly Subscription - All Inclusive'
+                }
+              </p>
+            </div>
           </div>
 
-          {/* Flow Plan Grid */}
-          <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-            <h2 className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent">
-              Flow Plan
-            </h2>
-            <p className="text-md sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Subscription Fee-Workflow Creation Only
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-24">
+          {/* Conditional Plan Rendering */}
+          {activePlan === 'flow' && (
+            <div className="transition-all duration-500 ease-in-out">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-24">
             {/* Starter Plan */}
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-violet-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
@@ -406,18 +442,13 @@ const Index = () => {
                 </div>
               </div>
             </div>
-          </div>
+              </div>
+            </div>
+          )}
 
-          {/* Pilot Plan Grid */}
-          <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-            <h2 className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent">
-              Pilot Plan
-            </h2>
-            <p className="text-lg sm:text-xl lg:text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Full Monthly Subscription-All Inclusive
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
+          {activePlan === 'pilot' && (
+            <div className="transition-all duration-500 ease-in-out">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
             {/* Starter Plan */}
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-violet-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
@@ -598,7 +629,9 @@ const Index = () => {
                 </div>
               </div>
             </div>
-          </div>
+              </div>
+            </div>
+          )}
 
           {/* Add-ons Section */}
           <div className="max-w-4xl mx-auto mb-16">
@@ -1236,6 +1269,7 @@ const Index = () => {
           <ScrollAnimation animation="scale-in" delay={400}>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button
+                onClick={() => window.open("https://form.jotform.com/252033789346059", "_blank")}
                 variant="secondary"
                 size="lg"
                 className="text-lg px-10 py-6 animate-pulse-glow"
@@ -1245,7 +1279,7 @@ const Index = () => {
               </Button>
               <div className="flex items-center gap-3 opacity-90">
                 <Mail className="w-5 h-5" />
-                <span className="text-lg">hello@flowpilot.io</span>
+                <span className="text-lg">flowpilot25@gmail.com</span>
               </div>
             </div>
           </ScrollAnimation>
