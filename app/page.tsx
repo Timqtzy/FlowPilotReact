@@ -31,7 +31,9 @@ import {
   Lightbulb,
   User
 } from "lucide-react";
+import FlowPilotLogo from "@/public/FlowPilotLogo.png";
 import { useState } from "react";
+import Image from "next/image";
 
 const Index = () => {
   const [activePlan, setActivePlan] = useState<'flow' | 'pilot'>('flow');
@@ -41,8 +43,8 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="p-2 bg-hero-gradient rounded-lg">
-              <Zap className="w-5 h-5 text-primary-foreground text-white" />
+            <div className=" rounded-lg">
+                  <Image src={FlowPilotLogo} alt="Flow Pilot Logo" className="w-10 h-10" />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Flow Pilot
@@ -208,7 +210,7 @@ const Index = () => {
       <section id="pricing" className="px-6 py-20 lg:py-32">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 sm:mb-20 lg:mb-24">
+          <div className="text-center mb-14 sm:mb-16 lg:mb-18">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
               Service Packages
@@ -216,19 +218,22 @@ const Index = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 dark:from-purple-400 dark:via-violet-400 dark:to-indigo-400 bg-clip-text text-transparent">
               Choose Your Plan
             </h2>
-            <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              All plans include setup, hosting, AI workflow credits, and ongoing
-              support. You don't need your own Zapier, Make, or AI tools — we
-              handle it all on flow pilot.
-            </p>
-
-            {/* Toggle Buttons */}
-            <div className="flex justify-center mt-12 mb-8">
+             {/* Plan Description */}
+             <div className="text-center mb-8">
+              <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                {activePlan === 'flow' 
+                  ? 'Subscribe to our service, plug in your preferred automation tool, and let us expertly craft powerful workflows tailored to your needs.' 
+                  : 'Our full-service subscription handles everything—from automation setup to end-to-end workflow execution—so you stay focused on what matters.'
+                }
+              </p>
+            </div>
+              {/* Toggle Buttons */}
+              <div className="flex justify-center mt-12 mb-8">
               <div className="glass rounded-2xl p-2 border border-purple-200 dark:border-purple-800">
                 <div className="flex">
                   <button
                     onClick={() => setActivePlan('flow')}
-                    className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+                    className={`px-4 py-2 rounded-xl font-semibold text-lg transition-all duration-300 ${
                       activePlan === 'flow'
                         ? 'bg-gradient-to-r from-purple-600 to-violet-600 text-white shadow-lg'
                         : 'text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400'
@@ -238,7 +243,7 @@ const Index = () => {
                   </button>
                   <button
                     onClick={() => setActivePlan('pilot')}
-                    className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+                    className={`px-4 py-2 rounded-xl font-semibold text-lg transition-all duration-300 ${
                       activePlan === 'pilot'
                         ? 'bg-gradient-to-r from-purple-600 to-violet-600 text-white shadow-lg'
                         : 'text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400'
@@ -249,16 +254,8 @@ const Index = () => {
                 </div>
               </div>
             </div>
-
-            {/* Plan Description */}
-            <div className="text-center mb-8">
-              <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                {activePlan === 'flow' 
-                  ? 'Subscribe to our service, plug in your preferred automation tool, and let us expertly craft powerful workflows tailored to your needs.' 
-                  : 'Our full-service subscription handles everything—from automation setup to end-to-end workflow execution—so you stay focused on what matters.'
-                }
-              </p>
-            </div>
+          
+           
           </div>
 
           {/* Conditional Plan Rendering */}

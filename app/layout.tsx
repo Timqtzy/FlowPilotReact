@@ -13,6 +13,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Flow Pilot - Automation Services",
   description: "Flow Pilot helps small teams and solo founders eliminate busywork with fully managed automations — powered by Zapier, Make, AI agents, and custom-built systems.",
+  icons: {
+    icon: "/FlowPilotLogo.png",
+  },
 };
 
 export default function RootLayout({
