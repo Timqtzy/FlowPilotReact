@@ -4,176 +4,124 @@ import clientPromise from '@/lib/mongodb';
 const EXCHANGE_RATE_API_KEY = '62d00c423b7b2a687d358ae4';
 const EXCHANGE_RATE_API_URL = 'https://v6.exchangerate-api.com/v6';
 
-// Default update intervals (in hours) - can be overridden by database config
-const DEFAULT_UPDATE_INTERVALS = {
-  USD: 24,    // USD updates every 24 hours
-  EUR: 24,    // EUR updates every 12 hours  
-  GBP: 24,    // GBP updates every 12 hours
-  CAD: 24,     // CAD updates every 8 hours
-  AUD: 24,     // AUD updates every 8 hours
-  JPY: 24,     // JPY updates every 6 hours
-  CHF: 24,    // CHF updates every 12 hours
-  SGD: 24,     // SGD updates every 8 hours
-  MOP: 24,     // MOP updates every 6 hours
-  PHP: 24,     // PHP updates every 6 hours
-};
+// All currencies update once per day (24 hours)
+const UPDATE_INTERVAL_HOURS = 24;
 
 export async function GET(request: NextRequest) {
   try {
     const client = await clientPromise;
     const db = client.db('flowpilot');
     const ratesCollection = db.collection('exchange_rates');
-    const configCollection = db.collection('exchange_rate_config');
     
     // Get current time
     const now = new Date();
     
-    // Get configurable update intervals (or use defaults)
-    let updateIntervals = DEFAULT_UPDATE_INTERVALS;
-    try {
-      const config = await configCollection.findOne({ _id: 'update_intervals' });
-      if (config && config.intervals) {
-        updateIntervals = { ...DEFAULT_UPDATE_INTERVALS, ...config.intervals };
-      }
-    } catch (configError) {
-      console.warn('Using default update intervals due to config error:', configError);
-    }
-    
-    // Check if we have recent rates for each currency
+    // Check if we have recent rates (less than 24 hours old)
     const existingRates = await ratesCollection.find({}).toArray();
     
-    // Determine which currencies need updating
-    const currenciesToUpdate: string[] = [];
-    const currentRates: any[] = [];
+    // Check if we need to update rates (if none exist or they're older than 24 hours)
+    const needsUpdate = existingRates.length === 0 || 
+      existingRates.some(rate => {
+        if (!rate.lastUpdated) return true;
+        const timeDiff = now.getTime() - new Date(rate.lastUpdated).getTime();
+        return timeDiff > (UPDATE_INTERVAL_HOURS * 60 * 60 * 1000);
+      });
     
-    for (const currency of Object.keys(updateIntervals)) {
-      const existingRate = existingRates.find(rate => rate.currency === currency);
-      const updateInterval = updateIntervals[currency as keyof typeof updateIntervals];
-      const lastUpdate = existingRate?.lastUpdated;
-      
-      if (!existingRate || !lastUpdate || 
-          (now.getTime() - new Date(lastUpdate).getTime()) > (updateInterval * 60 * 60 * 1000)) {
-        currenciesToUpdate.push(currency);
-      } else {
-        currentRates.push(existingRate);
-      }
-    }
-    
-    // If we have all current rates, return them
-    if (currenciesToUpdate.length === 0 && currentRates.length > 0) {
+    // If we have recent rates and don't need to update, return them from MongoDB
+    if (!needsUpdate && existingRates.length > 0) {
       return NextResponse.json({
         success: true,
-        rates: currentRates.map(rate => ({
+        rates: existingRates.map(rate => ({
           code: rate.currency,
           symbol: rate.symbol,
           name: rate.name,
           rate: rate.rate
         })),
-        updatedAt: new Date(),
-        source: 'database',
-        message: 'All rates are current'
+        updatedAt: existingRates[0]?.lastUpdated || new Date(),
+        source: 'mongodb_cached',
+        message: 'Using cached rates from MongoDB (updated within 24 hours)',
+        nextUpdate: new Date((existingRates[0]?.lastUpdated?.getTime() || now.getTime()) + (UPDATE_INTERVAL_HOURS * 60 * 60 * 1000))
       });
     }
     
-    // Fetch new rates for currencies that need updating
-    if (currenciesToUpdate.length > 0) {
-      try {
-        const response = await fetch(`${EXCHANGE_RATE_API_URL}/${EXCHANGE_RATE_API_KEY}/latest/USD`);
-        
-        if (!response.ok) {
-          throw new Error(`API request failed: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        
-        if (data.result !== 'success') {
-          throw new Error('API returned error: ' + data['error-type']);
-        }
-        
-        // Update each currency that needs refreshing
-        for (const currency of currenciesToUpdate) {
-          const rate = data.conversion_rates[currency];
-          if (rate) {
-            const currencyData = {
-              currency: currency,
-              symbol: getCurrencySymbol(currency),
-              name: getCurrencyName(currency),
-              rate: rate,
-              lastUpdated: now,
-              updateInterval: updateIntervals[currency as keyof typeof updateIntervals]
-            };
-            
-            // Upsert the currency rate
-            await ratesCollection.updateOne(
-              { currency: currency },
-              { $set: currencyData },
-              { upsert: true }
-            );
-            
-            // Add to current rates
-            currentRates.push(currencyData);
-          }
-        }
-        
-        // Add USD (base currency)
-        const usdData = {
-          currency: 'USD',
-          symbol: '$',
-          name: 'US Dollar',
-          rate: 1,
-          lastUpdated: now,
-          updateInterval: updateIntervals.USD
-        };
-        
-        await ratesCollection.updateOne(
-          { currency: 'USD' },
-          { $set: usdData },
-          { upsert: true }
-        );
-        
-        // Ensure USD is in current rates
-        const usdIndex = currentRates.findIndex(rate => rate.currency === 'USD');
-        if (usdIndex >= 0) {
-          currentRates[usdIndex] = usdData;
-        } else {
-          currentRates.push(usdData);
-        }
-        
-      } catch (apiError) {
-        console.error('Error fetching from API:', apiError);
-        
-        // If API fails, try to return what we have in database
-        if (currentRates.length > 0) {
-          return NextResponse.json({
-            success: true,
-            rates: currentRates.map(rate => ({
-              code: rate.currency,
-              symbol: rate.symbol,
-              name: rate.name,
-              rate: rate.rate
-            })),
-            updatedAt: new Date(),
-            source: 'database_fallback',
-            warning: 'Using cached rates due to API error',
-            currenciesUpdated: currenciesToUpdate.length
-          });
+    // Fetch new rates from API (only happens once per day)
+    try {
+      console.log('Fetching fresh exchange rates from API...');
+      const response = await fetch(`${EXCHANGE_RATE_API_URL}/${EXCHANGE_RATE_API_KEY}/latest/USD`);
+      
+      if (!response.ok) {
+        throw new Error(`API request failed: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      if (data.result !== 'success') {
+        throw new Error('API returned error: ' + data['error-type']);
+      }
+      
+      // Clear old rates and insert new ones
+      await ratesCollection.deleteMany({});
+      
+      const currencies = ['USD', 'EUR', 'GBP', 'CAD', 'AUD', 'JPY', 'CHF', 'SGD', 'MOP', 'PHP'];
+      const newRates = [];
+      
+      for (const currency of currencies) {
+        const rate = currency === 'USD' ? 1 : data.conversion_rates[currency];
+        if (rate !== undefined) {
+          const currencyData = {
+            currency: currency,
+            symbol: getCurrencySymbol(currency),
+            name: getCurrencyName(currency),
+            rate: rate,
+            lastUpdated: now,
+            updateInterval: UPDATE_INTERVAL_HOURS
+          };
+          
+          await ratesCollection.insertOne(currencyData);
+          newRates.push(currencyData);
         }
       }
+      
+      console.log(`Successfully updated ${newRates.length} currency rates in MongoDB`);
+      
+      // Return the fresh rates
+      return NextResponse.json({
+        success: true,
+        rates: newRates.map(rate => ({
+          code: rate.currency,
+          symbol: rate.symbol,
+          name: rate.name,
+          rate: rate.rate
+        })),
+        updatedAt: now,
+        source: 'api_fresh',
+        message: 'Fresh rates fetched from API and stored in MongoDB',
+        nextUpdate: new Date(now.getTime() + (UPDATE_INTERVAL_HOURS * 60 * 60 * 1000))
+      });
+      
+    } catch (apiError) {
+      console.error('Error fetching from API:', apiError);
+      
+      // If API fails, try to return what we have in database (even if old)
+      if (existingRates.length > 0) {
+        return NextResponse.json({
+          success: true,
+          rates: existingRates.map(rate => ({
+            code: rate.currency,
+            symbol: rate.symbol,
+            name: rate.name,
+            rate: rate.rate
+          })),
+          updatedAt: existingRates[0]?.lastUpdated || new Date(),
+          source: 'mongodb_fallback',
+          warning: 'Using existing rates due to API error - rates may be outdated',
+          nextUpdate: new Date((existingRates[0]?.lastUpdated?.getTime() || now.getTime()) + (UPDATE_INTERVAL_HOURS * 60 * 60 * 1000))
+        });
+      }
+      
+      // If no rates exist and API fails, return error
+      throw new Error('No exchange rates available and API request failed');
     }
-    
-    // Return all current rates
-    return NextResponse.json({
-      success: true,
-      rates: currentRates.map(rate => ({
-        code: rate.currency,
-        symbol: rate.symbol,
-        name: rate.name,
-        rate: rate.rate
-      })),
-      updatedAt: now,
-      source: 'database_updated',
-      currenciesUpdated: currenciesToUpdate.length
-    });
     
   } catch (error) {
     console.error('Error in exchange rates API:', error);

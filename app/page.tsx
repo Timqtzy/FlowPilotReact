@@ -276,13 +276,18 @@ const Index = () => {
                 <PricingCard
                   title="Starter"
                   usdPrice={199}
-                  description="For founders and freelancers with lean, high-impact needs."
+                  description=" For founders and freelancers who want expert-built automations using their own tools."
                   features={[
                     "Up to 4 custom workflows",
-                    "Simple logic and triggers",
-                    "Email support",
                     "Workflow documentation & handoff",
-                    "For small teams",
+                    "Discord — get answers fast",
+                    "Built on your preferred automation tools",
+                  ]}
+                  featureDetails={[
+                    "Up to 4 custom workflows — tailored to your processes and goals",
+                    "Workflow documentation & handoff — own your automations with clear instructions",
+                    "Discord — get answers fast",
+                    "Built on your preferred automation tools — Zapier, Make, n8n, or others you provide",
                   ]}
                   badge="MOST POPULAR"
                   badgeColor="from-purple-600 to-violet-600"
@@ -296,14 +301,18 @@ const Index = () => {
                 <PricingCard
                   title="Growth"
                   usdPrice={599}
-                  description="For startups, ops teams, or digital agencies."
+                  description=" For startups, ops teams, or digital agencies who want more advanced automations built on their own tools."
                   features={[
                     "Up to 10 advanced workflows",
-                    "API calls and conditional routing",
                     "Discord + email support",
-                    "2 free change requests included",
                     "Workflow documentation & handoff",
-                    "Ideal for scaling",
+                    "Built on your preferred automation tools",
+                  ]}
+                  featureDetails={[
+                    "Up to 10 advanced workflows — scalable across departments",
+                    "Discord + email support — get answers fast",
+                    "Workflow documentation & handoff — complete transparency and control",
+                    "Built on your preferred automation tools — Zapier, Make, n8n, or others you provide",
                   ]}
                   icon={<Sprout className="w-8 h-8 text-white" />}
                   gradient="from-indigo-600 to-purple-600"
@@ -314,14 +323,20 @@ const Index = () => {
                 <PricingCard
                   title="Pro"
                   usdPrice={1299}
-                  description="For complex systems with high-volume automations or custom AI logic."
+                  description=" For complex systems that need high-volume automations, advanced AI logic, and dedicated support — all built on your tools."
                   features={[
-                    "Up to 20 complex workflows",
-                    "Advanced logic: dynamic paths, external data sources",
-                    "API integrations, multi-step chains",
-                    "Priority support (Discord + calls)",
-                    "Unlimited revision cycle during project",
-                    "Advanced setups",
+                    " 30 to unlimited fully managed custom workflows",
+                    "Discord + email support",
+                    "Priority support",
+                    " Built on your preferred automation tools",
+                
+                  ]}
+                  featureDetails={[
+                    " 30 to unlimited fully managed custom workflows — automate as many processes as your business needs",
+                    "Discord + email support — get answers fast",
+                    "Priority support — Discord + scheduled calls for fast problem-solving",
+                    " Built on your preferred automation tools — Zapier, Make, n8n, or others you provide",
+              
                   ]}
                   badge="ENTERPRISE"
                   badgeColor="from-violet-600 to-purple-600"
@@ -341,14 +356,24 @@ const Index = () => {
                 <PricingCard
                   title="Starter"
                   usdPrice={499}
-                  description="For founders and freelancers with lean, high-impact needs."
+                  description="For founders and freelancers who want automation done-for-you, with all tools included. Powered by our secure, AWS-hosted Express.js automation engine for faster, more reliable workflows."
                   features={[
-                    "3 fully managed workflows",
-                    "We subscribe to and manage automation tools (Zapier/Make, etc.)",
-                    "2,000 AI credits/month",
-                    "Hosted backend + secure endpoints",
-                    "Email Support",
-                    "Monthly performance report"
+                    "3 fully managed custom workflows",
+                    "Unlimited AI text & decision integrations",
+                    "All external automation tool subscriptions included",
+                    "Monthly optimization & fine-tuning",
+                    "Discord support",
+                    "Proactive issue monitoring & instant fixes",
+                    "Full workflow lifecycle management"
+                  ]}
+                  featureDetails={[
+                   "3 fully managed custom workflows — built and maintained for your exact processes",
+                    "Unlimited AI text & decision integrations — summaries, classifications, routing, and more",
+                    "All external automation tool subscriptions included — Zapier, Make, AI APIs, hosting, and more",
+                    "Monthly optimization & fine-tuning — your automations get smarter over time",
+                    "Discord support — quick help whenever you need it",
+                    "Proactive issue monitoring & instant fixes — we detect and solve problems before you even notice",
+                    "Full workflow lifecycle management — revisions, updates, or deletions fully supported at no extra cost"
                   ]}
                   badge="MOST POPULAR"
                   badgeColor="from-purple-600 to-violet-600"
@@ -362,14 +387,22 @@ const Index = () => {
                 <PricingCard
                   title="Growth"
                   usdPrice={799}
-                  description="For startups, ops teams, or digital agencies."
+                  description=" For growing teams that need more workflows, advanced AI capabilities, and priority support. Powered by our secure, AWS-hosted Express.js automation engine for faster, more reliable workflows."
                   features={[
-                    "8 workflows, scalable across departments",
-                    "Monthly optimization & change requests",
-                    "API integrations & AI logic configuration",
-                    "5,000 AI credits/month",
-                    "Discord + email support",
-                    "Advanced reporting dashboard"
+                    "8 fully managed custom workflows",
+                    "Unlimited AI text, decision, and document integrations",
+                    " AI image generation",
+                    "All external automation tool subscriptions included",
+                    "Discord support",
+                    "Quarterly workflow strategy call"
+                  ]}
+                  featureDetails={[
+                    "8 fully managed custom workflows — more processes automated across your business",
+                    "Unlimited AI text, decision, and document integrations — summaries, classifications, routing, document parsing, and more",
+                    " AI image generation — up to 5,000 credits/month included",
+                    "All external automation tool subscriptions included — Zapier, Make, AI APIs, hosting, and more",
+                    "Discord support — faster response times and dedicated assistance",
+                    "Quarterly workflow strategy call — with our project manager to plan and expand your automation roadmap"
                   ]}
                   icon={<Sprout className="w-8 h-8 text-white" />}
                   gradient="from-indigo-600 to-purple-600"
@@ -380,14 +413,22 @@ const Index = () => {
                 <PricingCard
                   title="Pro"
                   usdPrice={1599}
-                  description="For complex systems with high-volume automations or custom AI logic."
+                  description=" For businesses that want unlimited automation capacity, advanced AI capabilities, and dedicated support. Powered by our secure, AWS-hosted Express.js automation engine for faster, more reliable workflows."
                   features={[
-                    "20+ enterprise-grade workflows",
-                    "Complex logic, external data calls, dynamic routing",
-                    "10,000 AI credits/month",
-                    "Performance tuning, secure hosting, & priority uptime",
-                    "Dedicated support team",
-                    "Priority onboarding & live check-ins"
+                    "30 to unlimited fully managed custom workflows",
+                    "Unlimited AI text, decision, and document integrations",
+                    "AI image generation and video generation",
+                    "All external automation tool subscriptions included",
+                    "Discord support",
+                    "Quarterly workflow strategy call"
+                  ]}
+                  featureDetails={[
+                    "30 to unlimited fully managed custom workflows — automate as many processes as your business needs",
+                    "Unlimited AI text, decision, and document integrations — across all departments",
+                    "AI image generation and video generation — up to 10,000 credits/month included",
+                    "All external automation tool subscriptions included — Zapier, Make, AI APIs, hosting, and more",
+                    "Discord support — faster response times and dedicated assistance",
+                    "Quarterly workflow strategy call — with our project manager to plan and expand your automation roadmap"
                   ]}
                   badge="ENTERPRISE"
                   badgeColor="from-violet-600 to-purple-600"
@@ -411,38 +452,83 @@ const Index = () => {
                     <Sparkles className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                    Add-Ons
+                    {activePlan === 'flow' ? 'AI Capabilities & Add-Ons' : 'Add-Ons'}
                   </h3>
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-6 mb-8">
-                  {[
-                    "Extra Workflow: $150–250 (one-time)",
-                    "Additional AI Credits: $30 per 1,000 credits",
-                    "Advanced API Integration: Custom quote",
-                  ].map((addon, i) => (
-                    <div
-                      key={i}
-                      className="flex items-start gap-3 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl"
-                    >
-                      <div className="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                      </div>
-                      <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                        {addon}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="p-6 bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl border border-purple-200 dark:border-purple-800 mb-6">
-                  <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                    AI credits are used for tasks like GPT-powered logic, AI
-                    agents, auto-responses, or smart document parsing. Each plan
-                    includes free credits monthly. If your usage exceeds the
-                    included amount, you can easily purchase more.
+                  <p className="text-slate-600 dark:text-slate-300 text-sm">
+                    {activePlan === 'flow' 
+                      ? '(Available for all Flow Plan tiers)' 
+                      : '(Available for all plans)'
+                    }
                   </p>
                 </div>
+
+                {activePlan === 'flow' ? (
+                  // Flow Plan Add-ons
+                  <div className="space-y-6 mb-8">
+                    <div className="grid md:grid-cols-3 gap-4">
+                      {[
+                        "Additional AI text & decision credits — $5 per 1,000 credits",
+                        "Additional AI image credits — $10 per 1,000 credits",
+                        "Additional AI video credits — $15 per 1,000 credits"
+                      ].map((addon, i) => (
+                        <div
+                          key={i}
+                          className="flex items-start gap-3 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl"
+                        >
+                          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                            {addon}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+                      <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                        All plan customers can access AI text, image and video generation by purchasing credits.
+                      </p>
+                    </div>
+
+                    <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+                      <h4 className="font-semibold text-slate-900 dark:text-white mb-3">
+                        💡 Not sure which AI or automation tools to choose?
+                      </h4>
+                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                        Subscribe to our <strong>Managed Automation & AI Tools package for $300/month</strong> — we'll handle the subscriptions, setup, and integration for you, so you can focus on results while we take care of the tech.
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  // Pilot Plan Add-ons
+                  <div className="space-y-6 mb-8">
+                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl mb-4">
+                      <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                        AI image and video generation available as an add-on — purchase credits as needed.
+                      </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {[
+                        "Additional AI Image Credits — $10 per 1,000 credits",
+                        "Additional AI Video Credits — $15 per 1,000 credits"
+                      ].map((addon, i) => (
+                        <div
+                          key={i}
+                          className="flex items-start gap-3 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl"
+                        >
+                          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                            {addon}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+                      <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                        Starter plan customers can access AI image & video generation by purchasing credits.
+                      </p>
+                    </div>
+                  </div>
+                )}
 
                 <div className="flex justify-center">
                   <a
@@ -453,7 +539,6 @@ const Index = () => {
                   >
                     Get Free Trial 7 Days
                   </a>
-             
                 </div>
               </div>
             </div>

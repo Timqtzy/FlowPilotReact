@@ -73,7 +73,7 @@ export function Navigation() {
   };
 
   return (
-    <nav className="hidden md:flex items-center space-x-1">
+    <nav className="hidden lg:flex items-center space-x-1">
       {navigationItems.map((item) => (
         <button
           key={item.name}
@@ -151,7 +151,7 @@ export function MobileNavigation() {
   };
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon">
