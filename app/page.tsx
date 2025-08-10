@@ -114,7 +114,7 @@ const Index = () => {
 
           <ScrollAnimation animation="scale-in" delay={600}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center" >
-              <Link href="https://form.jotform.com/252033789346059" target="_blank" rel="noopener noreferrer">
+              <Link href="https://form.jotform.com/252194204772456" target="_blank" rel="noopener noreferrer">
               <Button
               
                 variant="hero"
@@ -294,7 +294,7 @@ const Index = () => {
                   icon={<Zap className="w-8 h-8 text-white" />}
                   gradient="from-purple-600 to-violet-600"
                   buttonText="Get Free Trial 7 Days"
-                  buttonHref="https://form.jotform.com/252033789346059"
+                  buttonHref="https://form.jotform.com/252194204772456"
                   popular={true}
                 />
 
@@ -317,7 +317,7 @@ const Index = () => {
                   icon={<Sprout className="w-8 h-8 text-white" />}
                   gradient="from-indigo-600 to-purple-600"
                   buttonText="Get Free Trial 7 Days"
-                  buttonHref="https://form.jotform.com/252033789346059"
+                  buttonHref="https://form.jotform.com/252194204772456"
                 />
 
                 <PricingCard
@@ -343,7 +343,7 @@ const Index = () => {
                   icon={<Shield className="w-8 h-8 text-white" />}
                   gradient="from-violet-600 via-purple-600 to-indigo-600"
                   buttonText="Get Free Trial 7 Days"
-                  buttonHref="https://form.jotform.com/252033789346059"
+                  buttonHref="https://form.jotform.com/252194204772456"
                   enterprise={true}
                 />
               </div>
@@ -380,7 +380,7 @@ const Index = () => {
                   icon={<Zap className="w-8 h-8 text-white" />}
                   gradient="from-purple-600 to-violet-600"
                   buttonText="Get Free Trial 7 Days"
-                  buttonHref="https://form.jotform.com/252033789346059"
+                  buttonHref="https://form.jotform.com/252194204772456"
                   popular={true}
                 />
 
@@ -407,7 +407,7 @@ const Index = () => {
                   icon={<Sprout className="w-8 h-8 text-white" />}
                   gradient="from-indigo-600 to-purple-600"
                   buttonText="Get Free Trial 7 Days"
-                  buttonHref="https://form.jotform.com/252033789346059"
+                  buttonHref="https://form.jotform.com/252194204772456"
                 />
 
                 <PricingCard
@@ -435,7 +435,7 @@ const Index = () => {
                   icon={<Shield className="w-8 h-8 text-white" />}
                   gradient="from-violet-600 via-purple-600 to-indigo-600"
                   buttonText="Get Free Trial 7 Days"
-                  buttonHref="https://form.jotform.com/252033789346059"
+                  buttonHref="https://form.jotform.com/252194204772456"
                   enterprise={true}
                 />
               </div>
@@ -532,7 +532,7 @@ const Index = () => {
 
                 <div className="flex justify-center">
                   <a
-                    href="https://form.jotform.com/252033789346059"
+                    href="https://form.jotform.com/252194204772456"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full bg-gradient-to-r from-emerald-600 to-purple-600 hover:from-emerald-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-center"
@@ -1122,7 +1122,7 @@ const Index = () => {
           <ScrollAnimation animation="scale-in" delay={400}>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button
-                onClick={() => window.open("https://form.jotform.com/252033789346059", "_blank")}
+                onClick={() => window.open("https://form.jotform.com/252194204772456", "_blank")}
                 variant="secondary"
                 size="lg"
                 className="text-lg px-10 py-6 animate-pulse-glow"
