@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
+import { applyRateLimit, rateLimiters } from '@/lib/rate-limit';
 
 const EXCHANGE_RATE_API_KEY = '62d00c423b7b2a687d358ae4';
 const EXCHANGE_RATE_API_URL = 'https://v6.exchangerate-api.com/v6';
@@ -8,6 +9,12 @@ const EXCHANGE_RATE_API_URL = 'https://v6.exchangerate-api.com/v6';
 const UPDATE_INTERVAL_HOURS = 24;
 
 export async function GET(request: NextRequest) {
+  // Apply rate limiting
+  const rateLimitResult = await applyRateLimit(request, rateLimiters.exchangeRates);
+  if (rateLimitResult.blocked) {
+    return rateLimitResult.response;
+  }
+
   try {
     const client = await clientPromise;
     const db = client.db('flowpilot');

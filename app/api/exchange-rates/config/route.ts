@@ -1,14 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
+import { applyRateLimit, rateLimiters } from '@/lib/rate-limit';
 
 // GET: Retrieve current update intervals
-export async function GET() {
+export async function GET(request: NextRequest) {
+  // Apply rate limiting
+  const rateLimitResult = await applyRateLimit(request, rateLimiters.config);
+  if (rateLimitResult.blocked) {
+    return rateLimitResult.response;
+  }
+
   try {
     const client = await clientPromise;
     const db = client.db('flowpilot');
     const collection = db.collection('exchange_rate_config');
     
-    const config = await collection.findOne({ _id: 'update_intervals' });
+    const config = await collection.findOne({ _id: 'update_intervals' as any });
     
     if (!config) {
       // Return default intervals if no config exists
@@ -49,6 +56,12 @@ export async function GET() {
 
 // POST: Update update intervals
 export async function POST(request: NextRequest) {
+  // Apply rate limiting
+  const rateLimitResult = await applyRateLimit(request, rateLimiters.config);
+  if (rateLimitResult.blocked) {
+    return rateLimitResult.response;
+  }
+
   try {
     const body = await request.json();
     const { intervals } = body;
@@ -76,7 +89,7 @@ export async function POST(request: NextRequest) {
     
     // Update the configuration
     await collection.updateOne(
-      { _id: 'update_intervals' },
+      { _id: 'update_intervals' as any },
       { 
         $set: { 
           intervals: intervals,

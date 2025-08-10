@@ -16,6 +16,45 @@ export const metadata: Metadata = {
   icons: {
     icon: "/FlowPilotLogo.png",
   },
+  openGraph: {
+    url: "https://flow-pilot.awtomasyon.com/",
+    type: "website",
+    title: "Flow Pilot - Automation Services",
+    description: "Flow Pilot helps small teams and solo founders eliminate busywork with fully managed automations — powered by Zapier, Make, AI agents, and custom-built systems.",
+    images: [
+      {
+        url: "/FlowPilotLogo.png",
+        width: 1200,
+        height: 630,
+        alt: "Flow Pilot - Automation Services",
+      },
+    ],
+    siteName: "Flow Pilot",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Flow Pilot - Automation Services",
+    description: "Flow Pilot helps small teams and solo founders eliminate busywork with fully managed automations — powered by Zapier, Make, AI agents, and custom-built systems.",
+    images: ["/FlowPilotLogo.png"],
+  },
+  metadataBase: new URL("https://flow-pilot.awtomasyon.com"),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // Add verification codes when available
+    // google: "your-google-verification-code",
+    // yandex: "your-yandex-verification-code",
+    // yahoo: "your-yahoo-verification-code",
+  },
 };
 
 export default function RootLayout({

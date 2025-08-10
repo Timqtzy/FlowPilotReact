@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cleanup:rate-limits": "node scripts/cleanup-rate-limits.js",
+    "test:rate-limit": "node scripts/test-rate-limit.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
