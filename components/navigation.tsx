@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription, SheetHeader } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Menu, X } from "lucide-react";
+import { CurrencyChanger } from "@/components/currency-changer";
+import { useCurrency } from "@/components/currency-context";
 
 const navigationItems = [
   { name: "Home", href: "#home" },
@@ -18,6 +20,7 @@ const navigationItems = [
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
+  const { selectedCurrency, setSelectedCurrency } = useCurrency();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,6 +87,10 @@ export function Navigation() {
           {item.name}
         </button>
       ))}
+      <CurrencyChanger 
+        selectedCurrency={selectedCurrency}
+        onCurrencyChange={setSelectedCurrency}
+      />
     </nav>
   );
 }
@@ -91,6 +98,7 @@ export function Navigation() {
 export function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const { selectedCurrency, setSelectedCurrency } = useCurrency();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -175,6 +183,12 @@ export function MobileNavigation() {
                 {item.name}
               </button>
             ))}
+            <div className="pt-4 border-t border-border">
+              <CurrencyChanger 
+                selectedCurrency={selectedCurrency}
+                onCurrencyChange={setSelectedCurrency}
+              />
+            </div>
           </div>
         </SheetContent>
       </Sheet>

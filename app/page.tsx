@@ -12,7 +12,9 @@ import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ScrollAnimation } from "@/components/scroll-animation";
 import { Navigation, MobileNavigation } from "@/components/navigation";
+import Link from "next/link";
 import {
+  Sprout,
   Zap,
   Cog,
   Rocket,
@@ -29,16 +31,21 @@ import {
   Shield,
   Brain,
   Lightbulb,
-  User
+  User,
 } from "lucide-react";
 import FlowPilotLogo from "@/public/FlowPilotLogo.png";
 import { useState } from "react";
 import Image from "next/image";
+import { CurrencyProvider } from "@/components/currency-context";
+import { useCurrency } from "@/components/currency-context";
+import { convertPrice, formatPrice } from "@/components/currency-changer";
+import { PricingCard } from "@/components/dynamic-pricing";
 
 const Index = () => {
   const [activePlan, setActivePlan] = useState<'flow' | 'pilot'>('flow');
   return (
-    <div className="min-h-screen bg-background">
+    <CurrencyProvider>
+      <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -54,6 +61,7 @@ const Index = () => {
             <Navigation />
             <MobileNavigation />
             <ThemeToggle />
+            
           </div>
         </div>
       </header>
@@ -105,8 +113,10 @@ const Index = () => {
           </ScrollAnimation>
 
           <ScrollAnimation animation="scale-in" delay={600}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center" >
+              <Link href="https://form.jotform.com/252033789346059" target="_blank" rel="noopener noreferrer">
               <Button
+              
                 variant="hero"
                 size="lg"
                 className="text-lg px-10 py-6 animate-pulse-glow text-white"
@@ -114,6 +124,7 @@ const Index = () => {
                 Book a Free Automation Call
                 <ArrowRight className="w-5 h-5" />
               </Button>
+              </Link>
               {/* <div className="flex items-center gap-2 text-muted-foreground">
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
@@ -262,183 +273,64 @@ const Index = () => {
           {activePlan === 'flow' && (
             <div className="transition-all duration-500 ease-in-out">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-24">
-            {/* Starter Plan */}
-            <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-violet-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-              <div className="relative bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-800 rounded-2xl p-8 h-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
-                <div className="absolute top-4 right-4">
-                  <div className="bg-gradient-to-r from-purple-600 to-violet-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                    MOST POPULAR
-                  </div>
-                </div>
-
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-violet-500 rounded-2xl flex items-center justify-center">
-                    <Zap className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                    Starter
-                  </h3>
-                  <div className="text-4xl lg:text-5xl font-bold text-purple-600 dark:text-purple-400 mb-2">
-                    $199
-                    <span className="text-lg text-slate-500 dark:text-slate-400">
-                      /month
-                    </span>
-                  </div>
-                  <p className="text-slate-600 dark:text-slate-300">
-                    For founders and freelancers with lean, high-impact needs.
-                  </p>
-                </div>
-
-                <div className="space-y-4 mb-8 flex-grow">
-                  {[
+                <PricingCard
+                  title="Starter"
+                  usdPrice={199}
+                  description="For founders and freelancers with lean, high-impact needs."
+                  features={[
                     "Up to 4 custom workflows",
                     "Simple logic and triggers",
                     "Email support",
                     "Workflow documentation & handoff",
                     "For small teams",
-                  ].map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle className="w-4 h-4 text-purple-600 dark:text-purple-400" />
-                      </div>
-                      <span className="text-slate-700 dark:text-slate-300">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                  ]}
+                  badge="MOST POPULAR"
+                  badgeColor="from-purple-600 to-violet-600"
+                  icon={<Zap className="w-8 h-8 text-white" />}
+                  gradient="from-purple-600 to-violet-600"
+                  buttonText="Get Free Trial 7 Days"
+                  buttonHref="https://form.jotform.com/252033789346059"
+                  popular={true}
+                />
 
-                <div className="flex justify-center mt-auto">
-                  <a
-                    href="https://form.jotform.com/252033789346059"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-center"
-                  >
-                    Get Free Trial 7 Days
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Growth Plan */}
-            <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-1000"></div>
-              <div className="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center">
-                    <Shield className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                    Growth
-                  </h3>
-                  <div className="text-4xl lg:text-5xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">
-                    $599
-                    <span className="text-lg text-slate-500 dark:text-slate-400">
-                      /month
-                    </span>
-                  </div>
-                  <p className="text-slate-600 dark:text-slate-300">
-                    For startups, ops teams, or digital agencies.
-                  </p>
-                </div>
-
-                <div className="space-y-4 mb-8 flex-grow">
-                  {[
+                <PricingCard
+                  title="Growth"
+                  usdPrice={599}
+                  description="For startups, ops teams, or digital agencies."
+                  features={[
                     "Up to 10 advanced workflows",
                     "API calls and conditional routing",
                     "Discord + email support",
                     "2 free change requests included",
                     "Workflow documentation & handoff",
                     "Ideal for scaling",
-                  ].map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                      </div>
-                      <span className="text-slate-700 dark:text-slate-300">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                  ]}
+                  icon={<Sprout className="w-8 h-8 text-white" />}
+                  gradient="from-indigo-600 to-purple-600"
+                  buttonText="Get Free Trial 7 Days"
+                  buttonHref="https://form.jotform.com/252033789346059"
+                />
 
-                <div className="flex justify-center mt-auto">
-                  <a
-                    href="https://form.jotform.com/252033789346059"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-center"
-                  >
-                    Get Free Trial 7 Days
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Pro Plan */}
-            <div className="relative group md:col-span-2 lg:col-span-1">
-              <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
-              <div className="relative bg-white dark:bg-slate-900 border-2 border-purple-300 dark:border-purple-700 rounded-2xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
-                <div className="absolute top-4 right-4">
-                  <div className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold animate-pulse">
-                    ENTERPRISE
-                  </div>
-                </div>
-
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center">
-                    <Shield className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                    Pro
-                  </h3>
-                  <div className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text mb-2">
-                    $1299
-                    <span className="text-lg text-slate-500 dark:text-slate-400">
-                      /month
-                    </span>
-                  </div>
-                  <p className="text-slate-600 dark:text-slate-300">
-                    For complex systems with high-volume automations or custom
-                    AI logic.
-                  </p>
-                </div>
-
-                <div className="space-y-4 mb-8 flex-grow">
-                  {[
+                <PricingCard
+                  title="Pro"
+                  usdPrice={1299}
+                  description="For complex systems with high-volume automations or custom AI logic."
+                  features={[
                     "Up to 20 complex workflows",
                     "Advanced logic: dynamic paths, external data sources",
                     "API integrations, multi-step chains",
                     "Priority support (Discord + calls)",
                     "Unlimited revision cycle during project",
                     "Advanced setups",
-                  ].map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-r from-violet-100 to-purple-100 dark:from-violet-900/50 dark:to-purple-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle className="w-4 h-4 text-violet-600 dark:text-violet-400" />
-                      </div>
-                      <span className="text-slate-700 dark:text-slate-300">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex justify-center mt-auto">
-                  <a
-                    href="https://form.jotform.com/252033789346059"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 hover:from-violet-700 hover:via-purple-700 hover:to-indigo-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-xl hover:shadow-2xl text-center"
-                  >
-                    Get Free Trial 7 Days
-                  </a>
-                 
-                </div>
-              </div>
-            </div>
+                  ]}
+                  badge="ENTERPRISE"
+                  badgeColor="from-violet-600 to-purple-600"
+                  icon={<Shield className="w-8 h-8 text-white" />}
+                  gradient="from-violet-600 via-purple-600 to-indigo-600"
+                  buttonText="Get Free Trial 7 Days"
+                  buttonHref="https://form.jotform.com/252033789346059"
+                  enterprise={true}
+                />
               </div>
             </div>
           )}
@@ -446,186 +338,65 @@ const Index = () => {
           {activePlan === 'pilot' && (
             <div className="transition-all duration-500 ease-in-out">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
-            {/* Starter Plan */}
-            <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-violet-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-              <div className="relative bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-800 rounded-2xl p-8 h-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
-                <div className="absolute top-4 right-4">
-                  <div className="bg-gradient-to-r from-purple-600 to-violet-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                    MOST POPULAR
-                  </div>
-                </div>
-
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-violet-500 rounded-2xl flex items-center justify-center">
-                    <Zap className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                    Starter
-                  </h3>
-                  <div className="text-4xl lg:text-5xl font-bold text-purple-600 dark:text-purple-400 mb-2">
-                    $499
-                    <span className="text-lg text-slate-500 dark:text-slate-400">
-                      /month
-                    </span>
-                  </div>
-                  <p className="text-slate-600 dark:text-slate-300">
-                    For founders and freelancers with lean, high-impact needs.
-                  </p>
-                </div>
-
-                <div className="space-y-4 mb-8 flex-grow">
-                  {[
+                <PricingCard
+                  title="Starter"
+                  usdPrice={499}
+                  description="For founders and freelancers with lean, high-impact needs."
+                  features={[
                     "3 fully managed workflows",
                     "We subscribe to and manage automation tools (Zapier/Make, etc.)",
                     "2,000 AI credits/month",
                     "Hosted backend + secure endpoints",
                     "Email Support",
                     "Monthly performance report"
-                  ].map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle className="w-4 h-4 text-purple-600 dark:text-purple-400" />
-                      </div>
-                      <span className="text-slate-700 dark:text-slate-300">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                  ]}
+                  badge="MOST POPULAR"
+                  badgeColor="from-purple-600 to-violet-600"
+                  icon={<Zap className="w-8 h-8 text-white" />}
+                  gradient="from-purple-600 to-violet-600"
+                  buttonText="Get Free Trial 7 Days"
+                  buttonHref="https://form.jotform.com/252033789346059"
+                  popular={true}
+                />
 
-                <div className="flex justify-center mt-auto">
-                  <a
-                    href="https://form.jotform.com/252033789346059"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-center"
-                  >
-                    Get Free Trial 7 Days
-                  </a>
-             
-                </div>
-              </div>
-            </div>
-
-            {/* Growth Plan */}
-            <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-50 transition duration-1000"></div>
-              <div className="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center">
-                    <Shield className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                    Growth
-                  </h3>
-                  <div className="text-4xl lg:text-5xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">
-                    $799
-                    <span className="text-lg text-slate-500 dark:text-slate-400">
-                      /month
-                    </span>
-                  </div>
-                  <p className="text-slate-600 dark:text-slate-300">
-                    For startups, ops teams, or digital agencies.
-                  </p>
-                </div>
-
-                <div className="space-y-4 mb-8 flex-grow">
-                  {[
+                <PricingCard
+                  title="Growth"
+                  usdPrice={799}
+                  description="For startups, ops teams, or digital agencies."
+                  features={[
                     "8 workflows, scalable across departments",
                     "Monthly optimization & change requests",
                     "API integrations & AI logic configuration",
                     "5,000 AI credits/month",
                     "Discord + email support",
                     "Advanced reporting dashboard"
-                  ].map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                      </div>
-                      <span className="text-slate-700 dark:text-slate-300">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                  ]}
+                  icon={<Sprout className="w-8 h-8 text-white" />}
+                  gradient="from-indigo-600 to-purple-600"
+                  buttonText="Get Free Trial 7 Days"
+                  buttonHref="https://form.jotform.com/252033789346059"
+                />
 
-                <div className="flex justify-center mt-auto">
-                  <a
-                    href="https://form.jotform.com/252033789346059"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-center"
-                  >
-                    Get Free Trial 7 Days
-                  </a>
-               
-                </div>
-              </div>
-            </div>
-
-            {/* Pro Plan */}
-            <div className="relative group md:col-span-2 lg:col-span-1">
-              <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
-              <div className="relative bg-white dark:bg-slate-900 border-2 border-purple-300 dark:border-purple-700 rounded-2xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col">
-                <div className="absolute top-4 right-4">
-                  <div className="bg-gradient-to-r from-violet-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold animate-pulse">
-                    ENTERPRISE
-                  </div>
-                </div>
-
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center">
-                    <Shield className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-2">
-                    Pro
-                  </h3>
-                  <div className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text mb-2">
-                    $1599
-                    <span className="text-lg text-slate-500 dark:text-slate-400">
-                      /month
-                    </span>
-                  </div>
-                  <p className="text-slate-600 dark:text-slate-300">
-                    For complex systems with high-volume automations or custom
-                    AI logic.
-                  </p>
-                </div>
-
-                <div className="space-y-4 mb-8 flex-grow">
-                  {[
+                <PricingCard
+                  title="Pro"
+                  usdPrice={1599}
+                  description="For complex systems with high-volume automations or custom AI logic."
+                  features={[
                     "20+ enterprise-grade workflows",
                     "Complex logic, external data calls, dynamic routing",
                     "10,000 AI credits/month",
                     "Performance tuning, secure hosting, & priority uptime",
                     "Dedicated support team",
                     "Priority onboarding & live check-ins"
-                  ].map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-r from-violet-100 to-purple-100 dark:from-violet-900/50 dark:to-purple-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle className="w-4 h-4 text-violet-600 dark:text-violet-400" />
-                      </div>
-                      <span className="text-slate-700 dark:text-slate-300">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex justify-center mt-auto">
-                  <a
-                    href="https://form.jotform.com/252033789346059"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 hover:from-violet-700 hover:via-purple-700 hover:to-indigo-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-xl hover:shadow-2xl text-center"
-                  >
-                    Get Free Trial 7 Days
-                  </a>
-                 
-                </div>
-              </div>
-            </div>
+                  ]}
+                  badge="ENTERPRISE"
+                  badgeColor="from-violet-600 to-purple-600"
+                  icon={<Shield className="w-8 h-8 text-white" />}
+                  gradient="from-violet-600 via-purple-600 to-indigo-600"
+                  buttonText="Get Free Trial 7 Days"
+                  buttonHref="https://form.jotform.com/252033789346059"
+                  enterprise={true}
+                />
               </div>
             </div>
           )}
@@ -1291,7 +1062,9 @@ const Index = () => {
         </p>
       </footer>
     </div>
+    </CurrencyProvider>
   );
 };
 
 export default Index;
+
