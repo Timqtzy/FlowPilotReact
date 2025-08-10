@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: "Flow Pilot helps small teams and solo founders eliminate busywork with fully managed automations — powered by Zapier, Make, AI agents, and custom-built systems.",
     images: [
       {
-        url: "/FlowPilotLogo.png",
+        url: "/FlowPilotImage.jpg",
         width: 1200,
         height: 630,
         alt: "Flow Pilot - Automation Services",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Flow Pilot - Automation Services",
     description: "Flow Pilot helps small teams and solo founders eliminate busywork with fully managed automations — powered by Zapier, Make, AI agents, and custom-built systems.",
-    images: ["/FlowPilotLogo.png"],
+    images: ["/FlowPilotImage.jpg"],
   },
   metadataBase: new URL("https://flow-pilot.awtomasyon.com"),
   robots: {
