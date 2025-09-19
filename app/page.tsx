@@ -760,75 +760,133 @@ const Index = () => {
                     Our Team
                   </h3>
                   <p className="text-lg text-center mb-12 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                    We’re a focused, hands-on automation team that brings together strategy,
+                    We're a focused, hands-on automation team that brings together strategy,
                     execution, communication, and growth. Here's who makes the magic happen
                   </p>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    {/* Gabriel */}
-                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
-                      <div className="w-16 h-16 bg-hero-gradient rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
-                        GM
-                      </div>
-                      <h4 className="text-xl font-semibold text-center mb-2">
-                        Gabriel Maturan
-                      </h4>
-                      <p className="text-primary text-center font-medium mb-3">
-                        Founder & CEO
-                      </p>
-                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
-                        Leads strategy and oversees all automation implementations
-                      </p>
-                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
-                        Vision, leadership, and architecture
-                      </p>
-                    </div>
 
-                    {/* Project Manager */}
-                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group md:col-span-2 lg:col-span-1">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
-                        R
+                  {/* Leadership */}
+                  <div className="mb-16">
+                    <h4 className="text-xl md:text-2xl font-semibold mb-8 text-center text-primary">
+                      Leadership
+                    </h4>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                      {/* Gabriel */}
+                      <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
+                        <div className="w-16 h-16 bg-hero-gradient rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                          GM
+                        </div>
+                        <h4 className="text-xl font-semibold text-center mb-2">
+                          Gabriel Maturan
+                        </h4>
+                        <p className="text-primary text-center font-medium mb-3">
+                          Co-Founder & CEO
+                        </p>
+                        <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                          Leads strategy and oversees all automation implementations
+                        </p>
+                        <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                          Vision, leadership, and architecture
+                        </p>
                       </div>
-                      <h4 className="text-xl font-semibold text-center mb-2">
-                        Russel
-                      </h4>
-                      <p className="text-primary text-center font-medium mb-3">
-                        Project Manager
-                      </p>
-                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
-                        Keeps communication and delivery smooth throughout your project
-                      </p>
-                    </div>
 
-                    {/* Sales Lead */}
-                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group md:col-span-2 lg:col-span-1">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
-                        E
+                      {/* Joshua Wong */}
+                      <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
+                        <div className="w-16 h-16 bg-hero-gradient rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                          JW
+                        </div>
+                        <h4 className="text-xl font-semibold text-center mb-2">
+                          Joshua Wong
+                        </h4>
+                        <p className="text-primary text-center font-medium mb-3">
+                          Co-Founder & CTO
+                        </p>
+                        <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                          Technical architecture and innovation strategy
+                        </p>
+                        <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                          Drives technology decisions and platform development
+                        </p>
                       </div>
-                      <h4 className="text-xl font-semibold text-center mb-2">
-                        Erish Joshua
-                      </h4>
-                      <p className="text-primary text-center font-medium mb-3">
-                        Sales Lead
-                      </p>
-                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
-                        Works directly with clients to scope, quote, and align the right solutions for their needs
-                      </p>
                     </div>
+                  </div>
 
-                    {/* Marketing & Outreach */}
-                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group md:col-span-2 lg:col-span-1">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
-                        M
+                  {/* Sales & Marketing */}
+                  <div className="mb-16">
+                    <h4 className="text-xl md:text-2xl font-semibold mb-8 text-center text-primary">
+                      Sales & Marketing
+                    </h4>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                      {/* Sales Lead */}
+                      <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
+                        <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                          E
+                        </div>
+                        <h4 className="text-xl font-semibold text-center mb-2">
+                          Erish Joshua
+                        </h4>
+                        <p className="text-primary text-center font-medium mb-3">
+                          Sales Lead
+                        </p>
+                        <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                          Works directly with clients to scope, quote, and align the right solutions for their needs
+                        </p>
                       </div>
-                      <h4 className="text-xl font-semibold text-center mb-2">
-                        Mark
-                      </h4>
-                      <p className="text-primary text-center font-medium mb-3">
-                        Marketing & Outreach
-                      </p>
-                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
-                        Responsible for client education, brand strategy, and lead generation
-                      </p>
+
+                      {/* Marketing & Outreach */}
+                      <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
+                        <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                          M
+                        </div>
+                        <h4 className="text-xl font-semibold text-center mb-2">
+                          Mark
+                        </h4>
+                        <p className="text-primary text-center font-medium mb-3">
+                          Marketing & Outreach
+                        </p>
+                        <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                          Responsible for client education, brand strategy, and lead generation
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Operations */}
+                  <div className="mb-16">
+                    <h4 className="text-xl md:text-2xl font-semibold mb-8 text-center text-primary">
+                      Operations
+                    </h4>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                      {/* Operations Director */}
+                      <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
+                        <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                          N
+                        </div>
+                        <h4 className="text-xl font-semibold text-center mb-2">
+                          Noly Mananquil
+                        </h4>
+                        <p className="text-primary text-center font-medium mb-3">
+                          Operations Director
+                        </p>
+                        <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                          Oversees operational excellence and process optimization
+                        </p>
+                      </div>
+
+                      {/* Project Manager */}
+                      <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
+                        <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                          R
+                        </div>
+                        <h4 className="text-xl font-semibold text-center mb-2">
+                          Russel
+                        </h4>
+                        <p className="text-primary text-center font-medium mb-3">
+                          Project Manager
+                        </p>
+                        <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                          Coordinates team resources and ensures timely project delivery
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -838,10 +896,13 @@ const Index = () => {
               <ScrollAnimation animation="fade-in-up" delay={400}>
                 <div className="mt-20">
                   <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-center">
-                    Automation Developers
+                    Development Team
                   </h3>
+                  <h4 className="text-xl md:text-2xl font-semibold mb-8 text-center text-primary">
+                    Automation Developers
+                  </h4>
                   <p className="text-lg text-center mb-12 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                    6 Specialists Experts in Zapier, Make, n8n, and custom integrations
+                    7 Specialists Experts in Zapier, Make, n8n, and custom integrations
                   </p>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     {/* Tim */}
@@ -855,8 +916,26 @@ const Index = () => {
                       <p className="text-primary text-center font-medium mb-3">
                         Lead Integrations
                       </p>
+                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                        Specializes in complex API integrations and workflow optimization
+                      </p>
                     </div>
 
+                    {/* Leslie */}
+                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
+                      <div className="w-16 h-16 bg-hero-gradient rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
+                        <User className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-xl font-semibold text-center mb-2">
+                        Leslie Gorospe
+                      </h4>
+                      <p className="text-primary text-center font-medium mb-3">
+                        Senior dev
+                      </p>
+                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                        Full-stack development and custom automation solutions expert
+                      </p>
+                    </div>
                     {/* Darrel */}
                     <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
                       <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
@@ -867,6 +946,9 @@ const Index = () => {
                       </h4>
                       <p className="text-primary text-center font-medium mb-3">
                         Workflow Architect
+                      </p>
+                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                        Designs and implements enterprise-grade automation workflows
                       </p>
                     </div>
 
@@ -881,6 +963,9 @@ const Index = () => {
                       <p className="text-primary text-center font-medium mb-3">
                         Backend Logic & Data Sync
                       </p>
+                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                        Ensures seamless data flow and backend process automation
+                      </p>
                     </div>
 
                     {/* Ram */}
@@ -893,6 +978,9 @@ const Index = () => {
                       </h4>
                       <p className="text-primary text-center font-medium mb-3">
                         Multi-platform Automation
+                      </p>
+                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                        Connects and automates across diverse platforms and tools
                       </p>
                     </div>
 
@@ -907,6 +995,9 @@ const Index = () => {
                       <p className="text-primary text-center font-medium mb-3">
                         API & Webhook Specialist
                       </p>
+                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                        Masters real-time integrations and event-driven automation
+                      </p>
                     </div>
 
                     {/* Randell  */}
@@ -919,6 +1010,9 @@ const Index = () => {
                       </h4>
                       <p className="text-primary text-center font-medium mb-3">
                         QA + Performance Optimization
+                      </p>
+                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
+                        Ensures reliability and peak performance of all automations
                       </p>
                     </div>
                   </div>
