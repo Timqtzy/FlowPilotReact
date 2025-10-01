@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
 import { applyRateLimit, rateLimiters } from '@/lib/rate-limit';
 
+export const dynamic = 'force-dynamic';
+
 // GET: Retrieve current update intervals
 export async function GET(request: NextRequest) {
   // Apply rate limiting

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
 import { applyRateLimit, rateLimiters } from '@/lib/rate-limit';
 
+export const dynamic = 'force-dynamic';
+
 const EXCHANGE_RATE_API_KEY = '62d00c423b7b2a687d358ae4';
 const EXCHANGE_RATE_API_URL = 'https://v6.exchangerate-api.com/v6';
 
