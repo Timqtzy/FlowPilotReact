@@ -5,7 +5,8 @@ import { convertPrice, formatPrice } from "@/components/currency-changer";
 
 interface PricingCardProps {
   title: string;
-  usdPrice: number;
+  usdPrice?: number;
+  phpPrice?: number;
   description: string;
   features: string[];
   featureDetails?: string[]; // New prop for detailed descriptions
@@ -22,6 +23,7 @@ interface PricingCardProps {
 export function PricingCard({
   title,
   usdPrice,
+  phpPrice,
   description,
   features,
   featureDetails = [], // Default to empty array
@@ -34,9 +36,31 @@ export function PricingCard({
   popular = false,
   enterprise = false,
 }: PricingCardProps) {
-  const { selectedCurrency } = useCurrency();
-  const convertedPrice = convertPrice(usdPrice, selectedCurrency);
-  const formattedPrice = formatPrice(convertedPrice, selectedCurrency);
+  const { selectedCurrency, currencies } = useCurrency();
+
+  // Get PHP currency object for conversion
+  const phpCurrency = currencies.find(c => c.code === 'PHP');
+
+  // Calculate and format price based on selected currency
+  let formattedPrice: string;
+
+  if (phpPrice !== undefined && phpCurrency) {
+    if (selectedCurrency.code === 'PHP') {
+      // Display as PHP without conversion
+      formattedPrice = `₱${phpPrice.toLocaleString('en-PH', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+    } else {
+      // Convert PHP to selected currency
+      // First convert PHP to USD (divide by PHP rate), then to target currency
+      const priceInUSD = phpPrice / phpCurrency.rate;
+      const convertedPrice = convertPrice(priceInUSD, selectedCurrency);
+      formattedPrice = formatPrice(convertedPrice, selectedCurrency);
+    }
+  } else if (usdPrice !== undefined) {
+    const convertedPrice = convertPrice(usdPrice, selectedCurrency);
+    formattedPrice = formatPrice(convertedPrice, selectedCurrency);
+  } else {
+    formattedPrice = 'N/A';
+  }
 
   return (
     <div className="relative group">
