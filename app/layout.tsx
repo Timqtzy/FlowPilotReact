@@ -11,33 +11,33 @@ import { ReactQueryProvider } from "@/components/react-query-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Flow Pilot - Automation Services",
-  description: "Flow Pilot helps small teams and solo founders eliminate busywork with fully managed automations — powered by Zapier, Make, AI agents, and custom-built systems.",
+  title: "Awtomasyon - Automation Services",
+  description: "Awtomasyon helps small teams and solo founders eliminate busywork with fully managed automations — powered by Zapier, Make, AI agents, and custom-built systems.",
   icons: {
-    icon: "/FlowPilotLogo.png",
+    icon: "/Awtomasyon.png",
   },
   openGraph: {
-    url: "https://flow-pilot.awtomasyon.com/",
+    url: "https://awtomasyon.com/",
     type: "website",
-    title: "Flow Pilot - Automation Services",
-    description: "Flow Pilot helps small teams and solo founders eliminate busywork with fully managed automations — powered by Zapier, Make, AI agents, and custom-built systems.",
+    title: "Awtomasyon - Automation Services",
+    description: "Awtomasyon helps small teams and solo founders eliminate busywork with fully managed automations — powered by Zapier, Make, AI agents, and custom-built systems.",
     images: [
       {
-        url: "/FlowPilotImage.jpg",
+        url: "/Awtomasyon.png",
         width: 1200,
         height: 630,
-        alt: "Flow Pilot - Automation Services",
+        alt: "Awtomasyon - Automation Services",
       },
     ],
-    siteName: "Flow Pilot",
+    siteName: "Awtomasyon",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flow Pilot - Automation Services",
-    description: "Flow Pilot helps small teams and solo founders eliminate busywork with fully managed automations — powered by Zapier, Make, AI agents, and custom-built systems.",
-    images: ["/FlowPilotImage.jpg"],
+    title: "Awtomasyon - Automation Services",
+    description: "Awtomasyon helps small teams and solo founders eliminate busywork with fully managed automations — powered by Zapier, Make, AI agents, and custom-built systems.",
+    images: ["/Awtomasyon.png"],
   },
-  metadataBase: new URL("https://flow-pilot.awtomasyon.com"),
+  metadataBase: new URL("https://awtomasyon.com"),
   robots: {
     index: true,
     follow: true,

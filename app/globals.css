@@ -17,9 +17,9 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 26% 14%;
 
-    --primary: 260 84% 32%;
+    --primary: 190 100% 50%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 260 84% 45%;
+    --primary-glow: 190 100% 60%;
 
     --secondary: 220 14% 96%;
     --secondary-foreground: 220 26% 14%;
@@ -27,27 +27,27 @@ All colors MUST be HSL.
     --muted: 220 14% 96%;
     --muted-foreground: 220 8.9% 46.1%;
 
-    --accent: 260 84% 32%;
-    --accent-foreground: 0 0% 98%;
-    --accent-glow: 260 100% 80%;
+    --accent: 74 61% 58%;
+    --accent-foreground: 220 26% 14%;
+    --accent-glow: 74 61% 68%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 260 84% 32%;
+    --ring: 190 100% 50%;
 
-    /* Flow Pilot Design System */
-    --hero-gradient: linear-gradient(135deg, hsl(260 84% 32%), hsl(280 84% 42%));
-    --card-gradient: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 98%));
-    --accent-gradient: linear-gradient(135deg, hsl(260 84% 45%), hsl(260 100% 80%));
-    --glass-gradient: linear-gradient(145deg, hsl(0 0% 100% / 0.8), hsl(220 14% 98% / 0.6));
-    
-    --shadow-elegant: 0 10px 40px -10px hsl(260 84% 32% / 0.15);
-    --shadow-glow: 0 0 30px hsl(260 100% 80% / 0.3);
+    /* Awtomasyon Design System - Cyan/Teal/Green Theme */
+    --hero-gradient: linear-gradient(135deg, hsl(190 100% 50%), hsl(74 61% 58%));
+    --card-gradient: linear-gradient(145deg, hsl(0 0% 100%), hsl(190 100% 98%));
+    --accent-gradient: linear-gradient(135deg, hsl(190 100% 50%), hsl(74 61% 58%));
+    --glass-gradient: linear-gradient(145deg, hsl(0 0% 100% / 0.8), hsl(190 100% 98% / 0.6));
+
+    --shadow-elegant: 0 10px 40px -10px hsl(190 100% 50% / 0.15);
+    --shadow-glow: 0 0 30px hsl(190 100% 60% / 0.3);
     --shadow-card: 0 4px 20px -2px hsl(220 13% 91% / 0.4);
-    
+
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
@@ -64,9 +64,9 @@ All colors MUST be HSL.
     --popover: 220 20% 18%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 260 84% 45%;
+    --primary: 190 100% 55%;
     --primary-foreground: 220 26% 14%;
-    --primary-glow: 260 100% 80%;
+    --primary-glow: 190 100% 65%;
 
     --secondary: 220 20% 22%;
     --secondary-foreground: 0 0% 98%;
@@ -74,25 +74,25 @@ All colors MUST be HSL.
     --muted: 220 20% 22%;
     --muted-foreground: 220 8.9% 65%;
 
-    --accent: 260 84% 45%;
+    --accent: 74 61% 60%;
     --accent-foreground: 220 26% 14%;
-    --accent-glow: 260 100% 80%;
+    --accent-glow: 74 61% 70%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 220 20% 22%;
     --input: 220 20% 22%;
-    --ring: 260 84% 45%;
+    --ring: 190 100% 55%;
 
-    /* Dark Mode Gradients */
-    --hero-gradient: linear-gradient(135deg, hsl(260 84% 25%), hsl(280 84% 35%));
-    --card-gradient: linear-gradient(145deg, hsl(220 20% 18%), hsl(220 20% 20%));
-    --accent-gradient: linear-gradient(135deg, hsl(260 84% 35%), hsl(260 100% 70%));
-    --glass-gradient: linear-gradient(145deg, hsl(220 20% 18% / 0.8), hsl(220 20% 20% / 0.6));
-    
-    --shadow-elegant: 0 10px 40px -10px hsl(260 84% 25% / 0.4);
-    --shadow-glow: 0 0 30px hsl(260 100% 70% / 0.4);
+    /* Dark Mode Gradients - Cyan/Teal/Green Theme */
+    --hero-gradient: linear-gradient(135deg, hsl(190 100% 40%), hsl(74 61% 48%));
+    --card-gradient: linear-gradient(145deg, hsl(220 20% 18%), hsl(190 50% 20%));
+    --accent-gradient: linear-gradient(135deg, hsl(190 100% 45%), hsl(74 61% 55%));
+    --glass-gradient: linear-gradient(145deg, hsl(220 20% 18% / 0.8), hsl(190 50% 20% / 0.6));
+
+    --shadow-elegant: 0 10px 40px -10px hsl(190 100% 40% / 0.4);
+    --shadow-glow: 0 0 30px hsl(190 100% 60% / 0.4);
     --shadow-card: 0 4px 20px -2px hsl(220 20% 10% / 0.6);
   }
 }
@@ -164,4 +164,72 @@ All colors MUST be HSL.
   .animate-delay-200 { animation-delay: 0.2s; }
   .animate-delay-300 { animation-delay: 0.3s; }
   .animate-delay-400 { animation-delay: 0.4s; }
+
+  /* Animated connecting lines */
+  @keyframes line-flow {
+    0% {
+      stroke-dashoffset: 1000;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes line-pulse {
+    0%, 100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes gradient-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-line-flow {
+    animation: line-flow 2s ease-in-out forwards;
+  }
+
+  .animate-line-pulse {
+    animation: line-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-gradient-flow {
+    background-size: 200% 200%;
+    animation: gradient-flow 3s ease infinite;
+  }
+
+  /* Custom Scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.2);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.4);
+  }
+
+  /* Firefox scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.2) transparent;
+  }
 } 

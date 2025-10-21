@@ -39,6 +39,7 @@ import { CurrencyProvider } from "@/components/currency-context";
 import { useCurrency } from "@/components/currency-context";
 import { convertPrice, formatPrice } from "@/components/currency-changer";
 import { PricingCard } from "@/components/dynamic-pricing";
+import { BlogSection } from "@/components/blog-section";
 
 const Index = () => {
   return (
@@ -400,9 +401,9 @@ const Index = () => {
                 "Direct communication — quick feedback and iterations",
               ]}
               badge="MOST POPULAR"
-              badgeColor="from-purple-600 to-violet-600"
+              badgeColor="from-cyan-500 to-lime-500"
               icon={<Zap className="w-8 h-8 text-white" />}
-              gradient="from-purple-600 to-violet-600"
+              gradient="from-cyan-500 to-lime-500"
               buttonText="Get Free Trial 7 Days"
               buttonHref="https://form.jotform.com/252194204772456"
               popular={true}
@@ -425,7 +426,7 @@ const Index = () => {
                 "Regular progress updates — stay informed on all developments",
               ]}
               icon={<Sprout className="w-8 h-8 text-white" />}
-              gradient="from-indigo-600 to-purple-600"
+              gradient="from-teal-500 to-cyan-500"
               buttonText="Get Free Trial 7 Days"
               buttonHref="https://form.jotform.com/252194204772456"
             />
@@ -447,9 +448,9 @@ const Index = () => {
                 "Dedicated team support — always available for your needs",
               ]}
               badge="ENTERPRISE"
-              badgeColor="from-violet-600 to-purple-600"
+              badgeColor="from-cyan-600 to-lime-600"
               icon={<Shield className="w-8 h-8 text-white" />}
-              gradient="from-violet-600 via-purple-600 to-indigo-600"
+              gradient="from-cyan-600 via-teal-600 to-lime-600"
               buttonText="Get Free Trial 7 Days"
               buttonHref="https://form.jotform.com/252194204772456"
               enterprise={true}
@@ -651,6 +652,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Blog Section */}
+      <BlogSection />
+
       {/* About Section */}
       <ScrollAnimation>
         <section id="about" className="py-20 lg:py-32 relative overflow-hidden">
@@ -803,7 +807,7 @@ const Index = () => {
                           Gabriel Maturan
                         </h4>
                         <p className="text-primary text-center font-medium mb-3">
-                          Co-Founder & CEO
+                          Co-Founder & CTO
                         </p>
                         <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
                           Leads strategy and oversees all automation implementations
@@ -832,7 +836,7 @@ const Index = () => {
                            Joshua Wong
                         </h4>
                         <p className="text-primary text-center font-medium mb-3">
-                          Technical architecture and innovation strategy
+                          Co Founder and Marketing
                         </p>
                         <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
                           Drives technology decisions and platform development
@@ -914,24 +918,7 @@ const Index = () => {
                       <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
                         Full-stack development and custom automation solutions expert
                       </p>
-                    </div>
-                   
-
-                    {/* Gelo */}
-                    <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group md:col-span-2 lg:col-span-1">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center text-2xl text-white mb-4 mx-auto">
-                        <User className="w-8 h-8 text-white" />
-                      </div>
-                      <h4 className="text-xl font-semibold text-center mb-2">
-                        Gelo
-                      </h4>
-                      <p className="text-primary text-center font-medium mb-3">
-                        Backend Logic & Data Sync
-                      </p>
-                      <p className="text-sm text-muted-foreground text-center leading-relaxed group-hover:text-foreground transition-colors">
-                        Ensures seamless data flow and backend process automation
-                      </p>
-                    </div>
+                    </div>                  
 
                     {/* Ram */}
                     <div className="glass rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group md:col-span-2 lg:col-span-1">
@@ -966,130 +953,13 @@ const Index = () => {
                   </div>
                 </div>
               </ScrollAnimation>
-
-              {/* Our Values */}
-              <ScrollAnimation animation="fade-in-up" delay={500}>
-                <div className="mt-20">
-                  <h3 className="text-2xl md:text-3xl font-semibold mb-12 text-center">
-                    Our Values
-                  </h3>
-                  <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <div className="glass rounded-2xl p-6 text-center hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 mx-auto">
-                        <Brain className="w-8 h-8 text-white" />
-                      </div>
-                      <h4 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
-                        Clarity over complexity
-                      </h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
-                        Simple solutions that actually work
-                      </p>
-                    </div>
-
-                    <div className="glass rounded-2xl p-6 text-center hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
-                      <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center mb-4 mx-auto">
-                        <Zap className="w-8 h-8 text-white" />
-                      </div>
-                      <h4 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
-                        Automation should save time — not create confusion
-                      </h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
-                        Designed for efficiency, not complexity
-                      </p>
-                    </div>
-
-                    <div className="glass rounded-2xl p-6 text-center hover:shadow-glow transition-all duration-500 hover:-translate-y-2 group">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-4 mx-auto">
-                        <Target className="w-8 h-8 text-white" />
-                      </div>
-                      <h4 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
-                        Good systems are invisible — they just work
-                      </h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
-                        Seamless automation that runs in the background
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollAnimation>
-
-                {/* 
-                What We Work With - Workflows Created Section
-                This section displays workflow examples and platforms used
-                Currently hidden/disabled
-                
-                <ScrollAnimation animation="fade-in-up" delay={600}>
-                  <div className="mt-20">
-                    <h3 className="text-2xl md:text-3xl font-semibold mb-12 text-center">
-                      Workflows Created
-                    </h3>
-
-                    <div className="space-y-8 max-w-4xl mx-auto">
-                      <div className="glass rounded-2xl p-8 hover:shadow-glow transition-all duration-500 group">
-                        <h4 className="text-xl font-semibold mb-4 flex items-center">
-                          <Cog className="w-6 h-6 mr-3 text-primary group-hover:scale-110 transition-transform" />
-                          Workflow Title
-                        </h4>
-                        <div className="flex flex-wrap gap-4">
-                          {["Zapier", "Make (Integromat)", "n8n"].map(
-                            (platform, index) => (
-                              <div
-                                key={platform}
-                                className="bg-primary/10 rounded-full px-6 py-3 hover:bg-primary/20 transition-all duration-300 hover:scale-105 group/item"
-                                style={{ animationDelay: `${index * 0.1}s` }}
-                              >
-                                <span className="font-semibold text-primary group-hover/item:text-primary transition-colors">
-                                  {platform}
-                                </span>
-                              </div>
-                            )
-                          )}
-                        </div>
-                      </div>
-
-                      <div className="glass rounded-2xl p-8 hover:shadow-glow transition-all duration-500 group">
-                        <h4 className="text-xl font-semibold mb-4 flex items-center">
-                          <Cog className="w-6 h-6 mr-3 text-primary group-hover:scale-110 transition-transform" />
-                          Workflow Title
-                        </h4>
-                        <div className="flex flex-wrap gap-4">
-                          {["Zapier", "Make (Integromat)", "n8n"].map(
-                            (platform, index) => (
-                              <div
-                                key={platform}
-                                className="bg-primary/10 rounded-full px-6 py-3 hover:bg-primary/20 transition-all duration-300 hover:scale-105 group/item"
-                                style={{ animationDelay: `${index * 0.1}s` }}
-                              >
-                                <span className="font-semibold text-primary group-hover/item:text-primary transition-colors">
-                                  {platform}
-                                </span>
-                              </div>
-                            )
-                          )}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="text-center mt-12">
-                      <div className="glass rounded-2xl p-8 max-w-2xl mx-auto hover:shadow-glow transition-all duration-500 group">
-                        <p className="text-lg text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
-                          <strong className="text-primary">
-                            Whether you need 1 automation or a fully-managed
-                            backend system, we've got it covered.
-                          </strong>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </ScrollAnimation>
-                */}
-            </div>
+              </div>
           </div>
         </section>
       </ScrollAnimation>
 
       {/* Ready to Automate CTA Section */}
-      <section className="px-6 py-20 lg:py-32 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10">
+      <section id="contact" className="px-6 py-20 lg:py-32 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10">
         <div className="max-w-5xl mx-auto text-center">
           <ScrollAnimation animation="fade-in-up">
             <div className="mb-8">
@@ -1123,7 +993,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="px-6 py-12 bg-secondary/30 text-center border-t border-border/50">
         <p className="text-foreground text-lg">
-          © 2024 Awtomasyon. Automation services for small teams and solo
+          © 2024 awtomasyon Virtual automation experts for the ai era
           founders.
         </p>
       </footer>
