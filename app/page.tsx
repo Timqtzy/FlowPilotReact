@@ -665,7 +665,7 @@ const Index = () => {
                 <span className="text-sm font-medium">Community</span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                🚀 Ready to Start, Grow, and Automate Your Business?
+                Ready to Start, Grow, and Automate Your Business?
               </h2>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
                 Join our Skool community where entrepreneurs, creators, and business owners come together to share proven strategies, tools, and real-world lessons that actually work.
@@ -677,7 +677,7 @@ const Index = () => {
             <div className="glass rounded-3xl p-8 md:p-12 shadow-elegant hover:shadow-glow transition-all duration-500">
               <div className="text-center mb-8">
                 <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-primary">
-                  💡 Get access to:
+                  Get access to:
                 </h3>
               </div>
               
@@ -720,10 +720,10 @@ const Index = () => {
                   <Button
                     variant="hero"
                     size="lg"
-                    className="text-lg px-6 py-6 animate-pulse-glow text-white text-sm sm:text-base md:text-lg"
+                    className="text-lg px-6 py-6 animate-pulse-glow text-white sm:text-base md:text-lg"
                   >
-                    <span className="hidden sm:inline">👉 Click here to join us now: Join the Skool Community</span>
-                    <span className="sm:hidden">👉 Join Skool Community</span>
+                    <span className="hidden sm:inline">Click here to join us now: Join the Skool Community</span>
+                    <span className="sm:hidden">Join Skool Community</span>
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
