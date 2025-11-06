@@ -16,8 +16,8 @@ const navigationItems = [
   { name: "Pricing", href: "#pricing" },
   { name: "Results", href: "#results" },
   { name: "Blog", href: "#blog" },
-  { name: "About", href: "#about" },
   { name: "Community", href: "#community" },
+  { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -53,9 +53,10 @@ export function Navigation() {
         if (element) {
           const rect = element.getBoundingClientRect();
           const elementTop = window.scrollY + rect.top;
+          const elementBottom = elementTop + rect.height;
 
-          // If scroll position has passed this section's start
-          if (scrollPosition >= elementTop - 100) {
+          // If scroll position is within this section
+          if (scrollPosition >= elementTop - 100 && scrollPosition < elementBottom - 100) {
             currentSection = sectionId;
             break;
           }
@@ -150,9 +151,10 @@ export function MobileNavigation() {
         if (element) {
           const rect = element.getBoundingClientRect();
           const elementTop = window.scrollY + rect.top;
+          const elementBottom = elementTop + rect.height;
 
-          // If scroll position has passed this section's start
-          if (scrollPosition >= elementTop - 100) {
+          // If scroll position is within this section
+          if (scrollPosition >= elementTop - 100 && scrollPosition < elementBottom - 100) {
             currentSection = sectionId;
             break;
           }
